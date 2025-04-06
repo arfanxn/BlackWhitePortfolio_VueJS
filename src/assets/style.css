@@ -2,8 +2,7 @@
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  @media (width >= 40rem /* 640px */) {
-    max-width: 40rem /* 640px */;
+  @media (width >= 48rem /* 768px */) {
+    max-width: 48rem /* 768px */;
   }
 }
-
