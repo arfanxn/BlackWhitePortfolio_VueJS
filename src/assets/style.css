@@ -1,0 +1,9 @@
+.custom-container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  @media (width >= 40rem /* 640px */) {
+    max-width: 40rem /* 640px */;
+  }
+}
+

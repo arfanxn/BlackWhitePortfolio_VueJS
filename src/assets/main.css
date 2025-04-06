@@ -1,1 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 @import 'tailwindcss';
+@import '@/assets/style.css';
+
+@theme {
+  --font-firacode: 'Fira Code', monospace;
+  --font-inter: 'Inter', sans-serif;
+}
+
+:root {
+  background-color: black;
+  color: white;
+}
+
+#app {
+  min-height: 100vh;
+}
