@@ -1,7 +1,6 @@
-.custom-container {
+.container-x {
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  @apply px-4 md:px-8 mx-auto;
   @media (width >= 48rem /* 768px */) {
     max-width: 48rem /* 768px */;
   }
