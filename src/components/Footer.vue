@@ -14,6 +14,7 @@
           <li v-for="navigation in navigations" :key="navigation.label">
             <router-link
               class="font-firacode font-normal text-neutral-300 text-sm md:text-base hover:text-white transition-colors"
+              :class="{ 'text-white': $route.path === navigation.url }"
               :to="navigation.url"
             >
               {{ navigation.label }}
