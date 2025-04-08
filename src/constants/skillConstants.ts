@@ -70,7 +70,7 @@ export const skillCategories: readonly SkillCategory[] = Object.freeze([
       { name: 'Ethers', icon: SiEthers },
       { name: 'GoFiber', icon: LuBarChart2, iconClass: '-rotate-90' },
       { name: 'Laravel', icon: SiLaravel },
-      { name: 'Foundry Forge', icon: SiCurseforge },
+      { name: 'Foundry', icon: SiCurseforge },
     ],
   },
   {
