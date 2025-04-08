@@ -1,15 +1,24 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <Layout>
+    <main class="flex flex-col gap-y-14 md:gap-y-16">
+      <MainSection />
+
+      <AboutMeSection />
+
+      <ExperienceSection />
+
+      <EducationSection />
+
+      <SkillsSection />
+    </main>
+  </Layout>
 </template>
 
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>
+<script setup lang="ts">
+import Layout from '@/layouts/Layout.vue'
+import MainSection from '@/components/abouts/MainSection.vue'
+import AboutMeSection from '@/components/abouts/AboutMeSection.vue'
+import ExperienceSection from '@/components/abouts/ExperienceSection.vue'
+import EducationSection from '@/components/abouts/EducationSection.vue'
+import SkillsSection from '@/components/abouts/SkillsSection.vue'
+</script>
