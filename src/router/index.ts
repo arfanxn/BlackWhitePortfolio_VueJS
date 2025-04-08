@@ -1,17 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { RouteName } from '@/enums/routeEnums'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    {
-      path: '/',
-      name: RouteName.Home,
-      component: import('../views/HomeView.vue'),
-      meta: {
-        title: 'Home',
-      },
-    },
+    { path: '/', component: import('../views/AboutView.vue') },
   ],
 })
 
