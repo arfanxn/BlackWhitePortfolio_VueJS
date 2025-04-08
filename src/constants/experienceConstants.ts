@@ -8,7 +8,7 @@ type Experience = {
 
 export const experiences: readonly Experience[] = Object.freeze([
   {
-    organization: 'Exclolab',
+    organization: 'ExcloLab',
     role: 'Backend Developer',
     url: 'https://exclolab.com',
     startedAt: new Date('2022-06-15'),
