@@ -1,9 +1,16 @@
-import { SiGithub, LuMail, SiInstagram, SiLinkedin } from '@kalimahapps/vue-icons'
+import { SiGithub, SiInstagram, SiLinkedin, SiGmail } from '@kalimahapps/vue-icons'
+import type { Component } from 'vue'
 
-export const socials = Object.freeze([
+type Social = {
+  name: string
+  icon: Component
+  uri: string
+}
+
+export const socials: readonly Social[] = Object.freeze([
   {
     name: 'Email',
-    icon: LuMail,
+    icon: SiGmail,
     uri: 'mailto:arfanforproject@gmail.com',
   },
   {
