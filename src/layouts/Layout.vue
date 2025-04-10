@@ -2,7 +2,7 @@
 <template>
   <Header />
 
-  <main class="container-x">
+  <main class="main-container mx-auto main-horizontal-padding">
     <slot />
   </main>
 

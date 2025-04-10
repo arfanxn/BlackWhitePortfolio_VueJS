@@ -1,7 +1,9 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur w-full">
-    <nav class="container-x flex flex-row items-baseline justify-between py-6 md:py-6">
+    <nav
+      class="main-container mx-auto flex flex-row items-baseline justify-between py-6 md:py-6 main-horizontal-padding"
+    >
       <div class="max-w-6 md:max-w-8">
         <router-link to="/">
           <img class="w-full h-auto" src="/logo.png" alt="Site logo - return to homepage" />

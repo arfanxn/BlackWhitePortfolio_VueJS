@@ -2,7 +2,9 @@
 <template>
   <footer class="w-full mt-20 md:mt-28">
     <hr class="border-t border-neutral-300/25" />
-    <div class="container-x py-10 md:py-14 flex flex-row justify-between gap-8">
+    <div
+      class="main-container mx-auto py-10 md:py-14 main-horizontal-padding flex flex-row justify-between gap-8"
+    >
       <figure>
         <router-link to="/">
           <img class="max-w-20 md:max-w-28" src="/logo.png" alt="Logo" />
