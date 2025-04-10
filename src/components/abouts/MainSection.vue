@@ -1,6 +1,6 @@
 <template>
   <section class="min-h-screen flex flex-col justify-center gap-y-6 md:gap-y-6">
-    <h2 class="uppercase font-firacode text-base md:text-lg">Hi, I'm Arfan</h2>
+    <h2 class="uppercase font-firacode text-base md:text-lg text-neutral-300">Hi, I'm Arfan</h2>
     <p class="font-semibold text-2xl md:text-3xl font-firacode break-words">
       <span class="text-white">Backend Developer and Web 3 enthusiast from Jakarta.</span>
       <span class="text-neutral-300"> Interested in Golang, Rust, and Solidity.</span>
