@@ -28,62 +28,115 @@ import {
   SiVuedotjs,
 } from '@kalimahapps/vue-icons'
 
-type SkillItem = {
+export type Skill = {
   name: string
   icon: Component
   iconClass?: string
 }
 
-type SkillCategory = {
+export type SkillCategory = {
   name: string
-  skills: SkillItem[]
+  skills: Skill[]
 }
+
+export const indonesian = { name: 'Indonesian', icon: CoFlagId }
+export const english = { name: 'English', icon: CoFlagGb }
+export const html = { name: 'HTML', icon: SiHtml5 }
+export const css = { name: 'CSS', icon: SiCss3 }
+export const javascript = { name: 'JavaScript', icon: SiJavascript }
+export const typescript = { name: 'TypeScript', icon: SiTypescript }
+export const swift = { name: 'Swift', icon: SiSwift }
+export const go = { name: 'Go', icon: SiGo }
+export const php = { name: 'PHP', icon: SiPhp }
+export const python = { name: 'Python', icon: SiPython }
+export const solidity = { name: 'Solidity', icon: SiSolidity }
+export const bootstrap = { name: 'Bootstrap', icon: SiBootstrap }
+export const tailwind = { name: 'Tailwind', icon: SiTailwindcss }
+export const vue = { name: 'Vue', icon: SiVuedotjs }
+export const ethers = { name: 'Ethers', icon: SiEthers }
+export const gofiber = { name: 'GoFiber', icon: LuBarChart2, iconClass: '-rotate-90' }
+export const laravel = { name: 'Laravel', icon: SiLaravel }
+export const foundry = { name: 'Foundry', icon: SiCurseforge }
+export const notion = { name: 'Notion', icon: SiNotion }
+export const git = { name: 'Git', icon: SiGit }
+export const github = { name: 'Github', icon: SiGithub }
+export const docker = { name: 'Docker', icon: SiDocker }
+export const nginx = { name: 'Nginx', icon: SiNginx }
+export const mysql = { name: 'MySQL', icon: SiMysql }
+export const postgresql = { name: 'PostgreSQL', icon: SiPostgresql }
+export const redis = { name: 'Redis', icon: SiRedis }
+
+export const skillsMap = Object.freeze({
+  indonesian,
+  english,
+  html,
+  css,
+  javascript,
+  typescript,
+  swift,
+  go,
+  php,
+  python,
+  solidity,
+  bootstrap,
+  tailwind,
+  vue,
+  ethers,
+  gofiber,
+  laravel,
+  foundry,
+  notion,
+  git,
+  github,
+  docker,
+  nginx,
+  mysql,
+  postgresql,
+  redis,
+})
 
 export const skillCategories: readonly SkillCategory[] = Object.freeze([
   {
     name: 'Linguistics',
-    skills: [
-      { name: 'Indonesian', icon: CoFlagId },
-      { name: 'English', icon: CoFlagGb },
-    ],
+    skills: [skillsMap.indonesian, skillsMap.english],
   },
   {
     name: 'Languages',
     skills: [
-      { name: 'HTML', icon: SiHtml5 },
-      { name: 'CSS', icon: SiCss3 },
-      { name: 'JavaScript', icon: SiJavascript },
-      { name: 'TypeScript', icon: SiTypescript },
-      { name: 'Swift', icon: SiSwift },
-      { name: 'Go', icon: SiGo },
-      { name: 'PHP', icon: SiPhp },
-      { name: 'Python', icon: SiPython },
-      { name: 'Solidity', icon: SiSolidity },
+      skillsMap.html,
+      skillsMap.css,
+      skillsMap.javascript,
+      skillsMap.typescript,
+      skillsMap.swift,
+      skillsMap.go,
+      skillsMap.php,
+      skillsMap.python,
+      skillsMap.solidity,
     ],
   },
   {
     name: 'Frameworks',
     skills: [
-      { name: 'Bootstrap', icon: SiBootstrap },
-      { name: 'Tailwind', icon: SiTailwindcss },
-      { name: 'Vue', icon: SiVuedotjs },
-      { name: 'Ethers', icon: SiEthers },
-      { name: 'GoFiber', icon: LuBarChart2, iconClass: '-rotate-90' },
-      { name: 'Laravel', icon: SiLaravel },
-      { name: 'Foundry', icon: SiCurseforge },
+      skillsMap.bootstrap,
+      skillsMap.tailwind,
+      skillsMap.vue,
+      skillsMap.ethers,
+      skillsMap.gofiber,
+      skillsMap.laravel,
+      skillsMap.foundry,
     ],
   },
   {
     name: 'Tools',
     skills: [
-      { name: 'Notion', icon: SiNotion },
-      { name: 'Git', icon: SiGit },
-      { name: 'Github', icon: SiGithub },
-      { name: 'Docker', icon: SiDocker },
-      { name: 'Nginx', icon: SiNginx },
-      { name: 'Mysql', icon: SiMysql },
-      { name: 'PostgreSQL', icon: SiPostgresql },
-      { name: 'Redis', icon: SiRedis },
+      skillsMap.notion,
+      skillsMap.git,
+      skillsMap.github,
+      skillsMap.docker,
+      skillsMap.nginx,
+      skillsMap.mysql,
+      skillsMap.postgresql,
+      skillsMap.redis,
     ],
   },
 ])
