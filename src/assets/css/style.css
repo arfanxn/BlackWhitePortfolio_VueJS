@@ -1,7 +1,14 @@
-.container-x {
-  width: 100%;
-  @apply px-4 md:px-8 mx-auto;
+.main-container {
+  @apply w-full
   @media (width >= 48rem /* 768px */) {
     max-width: 48rem /* 768px */;
   }
+}
+
+.main-horizontal-padding {
+  @apply px-4 md:px-8;
+}
+
+.main-vertical-padding {
+  @apply py-4 md:py-8;
 }
