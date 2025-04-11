@@ -1,6 +1,6 @@
 <template>
   <li
-    class="group/certificate relative flex flex-col rounded-lg border border-neutral-300 p-4 hover:border-white"
+    class="group/certificate relative flex flex-col rounded-md border border-neutral-300 p-4 hover:border-white"
   >
     <a class="cursor-pointer w-fit block" :href="certificate.url" target="_blank">
       <h3 class="font-firacode font-semibold text-white text-base md:text-lg hover:underline">
@@ -55,7 +55,7 @@
 
 <script setup lang="ts">
 import SkillItem from '@/components/SkillItem.vue'
-import ImagePreviewModal from '@/views/ImagePreviewModal.vue'
+import ImagePreviewModal from '@/components/ImagePreviewModal.vue'
 import { LuEye, LuExternalLink } from '@kalimahapps/vue-icons'
 import type { Certificate } from '@/constants/certificateConstants'
 import moment from 'moment'
