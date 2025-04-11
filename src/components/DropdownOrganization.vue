@@ -27,7 +27,7 @@
     >
       <div
         v-if="isDropdownOpen"
-        class="absolute z-10 mt-1 left-0 w-[50vw] md:min-w-96 bg-neutral-300/25 backdrop-blur-md rounded-md"
+        class="absolute z-10 mt-1 left-0 min-w-[50vw] md:min-w-96 bg-neutral-300/25 backdrop-blur-md rounded-md"
       >
         <ul class="flex flex-row flex-wrap gap-4 list-none p-4">
           <li v-for="organization in organizations" :key="organization">
