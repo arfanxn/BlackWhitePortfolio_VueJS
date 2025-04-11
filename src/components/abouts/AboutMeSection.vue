@@ -18,7 +18,7 @@
 
     <!-- Profile image section -->
     <figure class="flex justify-center items-center">
-      <div class="max-w-3/4 md:max-w-1/2 overflow-hidden rounded-lg">
+      <div class="max-w-3/4 md:max-w-1/2 overflow-hidden rounded-md">
         <img
           class="size-full object-cover transform hover:scale-200 hover:translate-y-30 md:hover:translate-y-40 hover:-translate-x-10 transition-transform duration-500"
           src="/profile.jpg"
