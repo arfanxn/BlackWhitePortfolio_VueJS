@@ -1,12 +1,14 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <Header />
+  <div class="relative flex flex-col justify-between min-h-screen">
+    <Header />
 
-  <main class="main-container mx-auto main-horizontal-padding">
-    <slot />
-  </main>
+    <main class="relative main-container mx-auto main-horizontal-padding">
+      <slot />
+    </main>
 
-  <Footer />
+    <Footer />
+  </div>
 </template>
 
 <script setup lang="ts">

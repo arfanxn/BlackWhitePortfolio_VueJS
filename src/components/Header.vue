@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur w-full">
+  <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur bg-black/50 w-full">
     <nav
       class="main-container mx-auto flex flex-row items-baseline justify-between py-6 md:py-6 main-horizontal-padding"
     >
