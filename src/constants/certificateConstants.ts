@@ -10,7 +10,8 @@ export type Certificate = {
   expiredAt: Date | null
 }
 
-const organizationsMap = Object.freeze({
+export const organizationsMap = Object.freeze({
+  duolingo: 'Duolingo',
   cyfrinUpdraft: 'Cyfrin Updraft',
   udemy: 'Udemy',
   huawei: 'Huawei',
@@ -20,6 +21,15 @@ const organizationsMap = Object.freeze({
 })
 
 export const certificates: readonly Certificate[] = Object.freeze([
+  {
+    name: 'DET - Duolingo English Test',
+    organization: organizationsMap.duolingo,
+    url: 'https://certs.duolingo.com/ab85c76bd71c500194e309fbaf742c5c',
+    imageUrl: '/images/certificates/duolingo/duolingo-english-test.png',
+    skills: [skillsMap.english],
+    issuedAt: new Date('2024-01-27'),
+    expiredAt: new Date('2026-01-27'),
+  },
   {
     name: 'Cyfrin - Advanced Foundry',
     organization: organizationsMap.cyfrinUpdraft,
