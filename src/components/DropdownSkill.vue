@@ -1,7 +1,7 @@
 <template>
-  <div
+  <OnClickOutside
     class="relative h-full"
-    v-on-click-outside="closeDropdown"
+    @trigger="closeDropdown"
     @mouseenter="isDropdownHovered = true"
     @mouseleave="isDropdownHovered = false"
   >
@@ -46,7 +46,7 @@
         </ul>
       </div>
     </Transition>
-  </div>
+  </OnClickOutside>
 </template>
 
 <script setup lang="ts">
@@ -55,7 +55,7 @@ import OutlineButton from '@/components/OutlineButton.vue'
 import { LuChevronDown } from '@kalimahapps/vue-icons'
 import { defineEmits } from 'vue'
 import { type Skill } from '@/constants/skillConstants'
-import { vOnClickOutside } from '@vueuse/components'
+import { OnClickOutside } from '@vueuse/components'
 import { useDropdown } from '@/composables/useDropdown'
 
 const emit = defineEmits(['skillSelected'])
