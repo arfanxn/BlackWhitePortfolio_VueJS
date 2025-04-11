@@ -7,6 +7,10 @@ const router = createRouter({
     { path: '/certs', component: import('@/views/CertsView.vue'), meta: { title: 'Certs' } },
     { path: '/test', component: import('@/views/TestView.vue') },
   ],
+  scrollBehavior(to, from, savedPosition) {
+    // always scroll to top when navigating
+    return savedPosition || { top: 0 }
+  },
 })
 
 router.beforeEach((to, from, next) => {
