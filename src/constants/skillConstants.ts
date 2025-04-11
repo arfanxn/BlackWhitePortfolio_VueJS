@@ -95,6 +95,8 @@ export const skillsMap = Object.freeze({
   redis,
 })
 
+export const skills: readonly Skill[] = Object.freeze(Object.values(skillsMap))
+
 export const skillCategories: readonly SkillCategory[] = Object.freeze([
   {
     name: 'Linguistics',
