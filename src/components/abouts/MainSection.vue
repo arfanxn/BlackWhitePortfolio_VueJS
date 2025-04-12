@@ -1,7 +1,7 @@
 <template>
   <section class="min-h-screen flex flex-col justify-center gap-y-6 md:gap-y-6">
     <h2
-      v-motion-slide-left
+      v-motion-slide-top
       :duration="tap(animationDuration, (d) => incAnimationDuration(d))"
       :delay="getAnimationDelay()"
       class="uppercase font-firacode text-base md:text-lg text-neutral-300"
@@ -56,7 +56,7 @@ import { useScrollLock } from '@vueuse/core'
 import { onBeforeUnmount, onMounted } from 'vue'
 
 const animationDuration = 500
-const animationDelay = 300 
+const animationDelay = 300
 const socialIconAnimationDelay = 50
 const { inc: incAnimationDelay, get: getAnimationDelay } = useCounter(0)
 const { inc: incAnimationDuration, get: getAnimationDuration } = useCounter(0)
