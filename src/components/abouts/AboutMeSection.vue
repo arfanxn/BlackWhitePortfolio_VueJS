@@ -50,7 +50,7 @@
         aria-label="Download resume (PDF)"
       >
         <span>Resume.pdf</span>
-        <LuDownload />
+        <LuDownload class="text-xl" />
       </a>
     </div>
   </section>
