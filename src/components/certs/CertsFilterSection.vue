@@ -4,24 +4,18 @@
       <SearchBar
         v-model="certificateStore.keyword"
         @onInput="certificateStore.filter"
-        class="md:w-[50%]"
+        class="w-full md:w-[50%]"
       />
 
       <div class="flex flex-row flex-wrap items-center gap-4 md:gap-4">
         <DropdownSkill
-          :skills="
-            Array.from(
-              new Set(
-                origin_certificates.flatMap((certificate: Certificate) => certificate.skills),
-              ),
-            )
-          "
+          :skills="skills"
           v-model:selectedSkill="certificateStore.skillFilter"
           @skillSelected="certificateStore.filter"
         />
 
         <DropdownOrganization
-          :organizations="Object.values(organizationsMap)"
+          :organizations="organizations"
           v-model:selectedOrganization="certificateStore.organizationFilter"
           @organizationSelected="certificateStore.filter"
         />
@@ -42,4 +36,8 @@ import { organizationsMap } from '@/constants/certificateConstants'
 import { useCertificateStore } from '@/stores/useCertificateStore'
 
 const certificateStore = useCertificateStore()
+const organizations = Object.values(organizationsMap)
+const skills = Array.from(
+  new Set(origin_certificates.flatMap((certificate: Certificate) => certificate.skills)),
+).sort((a, b) => a.name.localeCompare(b.name))
 </script>
