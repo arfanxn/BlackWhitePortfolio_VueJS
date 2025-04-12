@@ -7,7 +7,7 @@
         :duration="300"
         :delay="300"
       >
-        <ArfanImage />
+        <ProfileImage />
       </div>
     </figure>
 
@@ -58,5 +58,5 @@
 
 <script setup lang="ts">
 import { FaDownload } from '@kalimahapps/vue-icons'
-import ArfanImage from '@/components/abouts/ArfanImage.vue'
+import ProfileImage from '@/components/abouts/ProfileImage.vue'
 </script>
