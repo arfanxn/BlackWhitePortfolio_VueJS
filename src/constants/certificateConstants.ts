@@ -11,13 +11,13 @@ export type Certificate = {
 }
 
 export const organizationsMap = Object.freeze({
-  duolingo: 'Duolingo',
-  cyfrinUpdraft: 'Cyfrin Updraft',
-  udemy: 'Udemy',
-  huawei: 'Huawei',
-  dicoding: 'Dicoding',
-  freeCodeCamp: 'freeCodeCamp',
   codepolitan: 'CODEPOLITAN',
+  cyfrinUpdraft: 'Cyfrin Updraft',
+  dicoding: 'Dicoding',
+  duolingo: 'Duolingo',
+  freeCodeCamp: 'freeCodeCamp',
+  huawei: 'Huawei',
+  udemy: 'Udemy',
 })
 
 export const certificates: readonly Certificate[] = Object.freeze([
