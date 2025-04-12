@@ -1,6 +1,6 @@
 <template>
   <section class="space-y-6">
-    <header>
+    <header v-motion-fade-visible-once :duration="300" :delay="300">
       <h2 class="font-firacode text-base md:text-lg font-semibold uppercase text-neutral-200">
         Skills
       </h2>
@@ -16,7 +16,10 @@
           v-for="skill in category.skills"
           :key="skill.name"
           :skill="skill"
-          icon-class="text-4xl"
+          iconClass="text-4xl"
+          v-motion-slide-visible-once-bottom
+          :duration="300"
+          :delay="300"
         />
       </ul>
     </div>

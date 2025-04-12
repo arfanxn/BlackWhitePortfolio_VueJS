@@ -1,13 +1,20 @@
 <template>
   <section class="space-y-6">
-    <header>
+    <header v-motion-fade-visible-once :duration="300" :delay="300">
       <h2 class="font-firacode text-base md:text-lg font-semibold uppercase text-neutral-200">
         Experience
       </h2>
     </header>
 
     <ul class="space-y-4 list-none">
-      <li v-for="experience in experiences" :key="experience.organization" class="group">
+      <li
+        v-for="experience in experiences"
+        :key="experience.organization"
+        class="group"
+        v-motion-slide-visible-once-left
+        :duration="300"
+        :delay="300"
+      >
         <article>
           <a class="cursor-pointer w-fit block" :href="experience.url" target="_blank">
             <h3 class="font-firacode font-semibold text-white text-base group-hover:underline">
