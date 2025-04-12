@@ -3,6 +3,7 @@
     <div class="flex flex-col gap-4 md:gap-4">
       <AFieldIconed
         v-model="certificateStore.keyword"
+        @onInput="certificateStore.filter"
         :icon="LuSearch"
         placeholder="Search certificates"
         class="w-full md:w-[50%]"
