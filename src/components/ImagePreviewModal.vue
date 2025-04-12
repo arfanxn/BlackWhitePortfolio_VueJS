@@ -1,5 +1,5 @@
 <template>
-  <transition name="modal">
+  <Teleport to="body">
     <div
       v-if="show"
       role="dialog"
@@ -7,9 +7,12 @@
       @click.self="close"
     >
       <div class="main-container max-h-full main-horizontal-padding main-vertical-padding">
-        <div class="relative p-4 space-y-2 backdrop-blur bg-neutral-300/25 rounded-md">
+        <div
+          v-motion-pop
+          class="relative p-4 space-y-2 bg-neutral-300/25 backdrop-blur-md rounded-md"
+        >
           <div class="flex flex-row justify-end">
-            <button @click="close" class="focus:outline-1 focus:ring-white">
+            <button @click="close" class="rounded-md p-1 focus:ring-1 focus:ring-white">
               <LuX class="text-2xl text-neutral-300 hover:text-white" />
             </button>
           </div>
@@ -32,7 +35,7 @@
         </div>
       </div>
     </div>
-  </transition>
+  </Teleport>
 </template>
 
 <script setup lang="ts">
