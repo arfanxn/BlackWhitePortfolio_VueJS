@@ -50,13 +50,13 @@
         aria-label="Download resume (PDF)"
       >
         <span>Resume.pdf</span>
-        <FaDownload />
+        <LuDownload />
       </a>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import { FaDownload } from '@kalimahapps/vue-icons'
+import { LuDownload } from '@kalimahapps/vue-icons'
 import ProfileImage from '@/components/abouts/ProfileImage.vue'
 </script>
