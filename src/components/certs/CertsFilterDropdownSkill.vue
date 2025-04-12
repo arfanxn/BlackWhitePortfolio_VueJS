@@ -17,7 +17,8 @@
       <ul class="flex flex-row flex-wrap">
         <li v-for="skill in skills" :key="skill.name">
           <button
-            @click="() => selectSkill(skill)"
+            @click.stop="() => selectSkill(skill)"
+            type="button"
             class="p-2 rounded-md"
             :class="[skill.name === selectedSkill?.name ? 'bg-neutral-300/25' : '']"
           >

@@ -12,7 +12,7 @@
       <ul class="flex flex-row flex-wrap gap-4">
         <li v-for="organization in organizations" :key="organization">
           <AOutlineButton
-            @click="() => selectOrganization(organization)"
+            @click.stop="() => selectOrganization(organization)"
             class="text-sm md:text-md px-2! py-1!"
             :class="[organization === selectedOrganization ? 'bg-neutral-300/25' : '']"
           >
