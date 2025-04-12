@@ -17,7 +17,7 @@
     </div>
 
     <footer class="h-screen flex items-center justify-center">
-      <h1 class="text-4xl font-bold">Footer</h1>
+      <h1 class="text-4xl font-bold">TheFooter</h1>
     </footer>
 
     <!--  -->

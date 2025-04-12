@@ -1,9 +1,10 @@
 <template>
   <section>
     <div class="flex flex-col gap-4 md:gap-4">
-      <SearchBar
+      <AFieldIconed
         v-model="certificateStore.keyword"
-        @onInput="certificateStore.filter"
+        :icon="LuSearch"
+        placeholder="Search certificates"
         class="w-full md:w-[50%]"
       />
 
@@ -25,15 +26,16 @@
 </template>
 
 <script setup lang="ts">
-import SearchBar from '@/components/SearchBar.vue'
-import DropdownSkill from '@/components/DropdownSkill.vue'
-import DropdownOrganization from '@/components/DropdownOrganization.vue'
+import AFieldIconed from '@/components/AFieldIconed.vue'
+import DropdownSkill from '@/components/certs/CertsFilterDropdownSkill.vue'
+import DropdownOrganization from '@/components/certs/CertsFilterDropdownOrganization.vue'
 import {
   certificates as origin_certificates,
   type Certificate,
 } from '@/constants/certificateConstants'
 import { organizationsMap } from '@/constants/certificateConstants'
 import { useCertificateStore } from '@/stores/useCertificateStore'
+import { LuSearch } from '@kalimahapps/vue-icons'
 
 const certificateStore = useCertificateStore()
 const organizations = Object.values(organizationsMap)

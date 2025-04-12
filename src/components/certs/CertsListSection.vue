@@ -1,7 +1,7 @@
 <template>
   <section>
     <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 list-none">
-      <CertificateItem
+      <CertListItem
         v-for="certificate in certificateStore.certificates"
         :key="certificate.name"
         :certificate="certificate"
@@ -21,7 +21,7 @@
 </template>
 
 <script setup lang="ts">
-import CertificateItem from '@/components/CertificateItem.vue'
+import CertListItem from '@/components/certs/CertListItem.vue'
 import { useCertificateStore } from '@/stores/useCertificateStore'
 
 const certificateStore = useCertificateStore()

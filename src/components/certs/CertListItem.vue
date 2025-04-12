@@ -19,12 +19,9 @@
     </time>
 
     <ul class="mt-2 flex flex-row flex-wrap items-baseline w-full gap-2 list-none">
-      <SkillItem
-        v-for="skill in certificate.skills"
-        :key="skill.name"
-        :skill="skill"
-        icon-class="text-2xl"
-      />
+      <li v-for="skill in certificate.skills" :key="skill.name">
+        <AIconTooltipped :icon="skill.icon" :tooltipLabel="skill.name" iconClass="text-2xl" />
+      </li>
     </ul>
 
     <div
@@ -45,7 +42,7 @@
       </a>
     </div>
 
-    <ImagePreviewModal
+    <AImagePreviewModal
       :show="showCertificateImage"
       :src="certificate.imageUrl!"
       @close="showCertificateImage = false"
@@ -54,8 +51,8 @@
 </template>
 
 <script setup lang="ts">
-import SkillItem from '@/components/SkillItem.vue'
-import ImagePreviewModal from '@/components/ImagePreviewModal.vue'
+import AIconTooltipped from '@/components/AIconTooltipped.vue'
+import AImagePreviewModal from '@/components/AImagePreviewModal.vue'
 import { LuEye, LuExternalLink } from '@kalimahapps/vue-icons'
 import type { Certificate } from '@/constants/certificateConstants'
 import moment from 'moment'

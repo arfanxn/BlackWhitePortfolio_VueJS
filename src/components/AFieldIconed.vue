@@ -2,8 +2,8 @@
 <template>
   <div class="flex flew-row items-center justify-between rounded-md px-4 py-2 gap-x-2 bg-white">
     <input
-      placeholder="Search certificates"
-      type="text"
+      :placeholder="placeholder"
+      :type="type"
       :value="inputValue"
       @input="(event) => onInput(event)"
       @blur="emit('onBlur', $event)"
@@ -12,13 +12,12 @@
       class="w-full h-full font-firacode autofill:bg-white text-black bg-white text-base placeholder:text-sm placeholder:text-neutral-800/50 focus:outline-0"
       :class="[inputClass]"
     />
-    <LuSearch class="text-lg text-neutral-800/50" />
+    <component ref="iconElement" :is="icon" class="text-neutral-800/50" :class="[iconClass]" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { LuSearch } from '@kalimahapps/vue-icons'
-import { computed } from 'vue'
+import { computed, type Component } from 'vue'
 
 const emit = defineEmits([
   'onFocus',
@@ -29,13 +28,22 @@ const emit = defineEmits([
   'update:value',
 ])
 
-const props = defineProps<{
+type Props = {
+  icon: Component
+  iconClass?: string
   inputClass?: string
+
+  placeholder?: string
+  type?: 'text' | 'password' | 'email' | 'number' | 'tel'
 
   // model relateds
   value?: string | number | null
   modelValue?: string | number | null
-}>()
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  type: 'text',
+})
 
 const inputValue = computed(() => props.modelValue ?? props.value ?? '')
 
