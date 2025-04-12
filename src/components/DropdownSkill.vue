@@ -18,34 +18,27 @@
     </OutlineButton>
 
     <!-- Animated Dropdown -->
-    <Transition
-      enter-active-class="transition duration-200 ease-out"
-      enter-from-class="opacity-0 scale-95"
-      enter-to-class="opacity-100 scale-100"
-      leave-active-class="transition duration-150 ease-in"
-      leave-from-class="opacity-100 scale-100"
-      leave-to-class="opacity-0 scale-95"
+
+    <div
+      v-if="isDropdownOpen"
+      v-motion-pop
+      class="absolute z-10 mt-1 left-0 min-w-54 md:min-w-54 bg-neutral-300/25 backdrop-blur-md rounded-md"
     >
-      <div
-        v-if="isDropdownOpen"
-        class="absolute z-10 mt-1 left-0 min-w-54 md:min-w-54 bg-neutral-300/25 backdrop-blur-md rounded-md"
-      >
-        <ul class="flex flex-row flex-wrap gap-4 list-none p-4">
-          <SkillItem
-            @click="() => selectSkill(skill)"
-            v-for="skill in skills"
-            :key="skill.name"
-            :skill="skill"
-            class="text-2xl"
-            :class="[
-              skill.name === selectedSkill?.name
-                ? 'before:absolute before:-z-10 before:-inset-2 before:rounded-md before:bg-neutral-300/25'
-                : '',
-            ]"
-          />
-        </ul>
-      </div>
-    </Transition>
+      <ul class="flex flex-row flex-wrap gap-4 list-none p-4">
+        <SkillItem
+          @click="() => selectSkill(skill)"
+          v-for="skill in skills"
+          :key="skill.name"
+          :skill="skill"
+          class="text-2xl"
+          :class="[
+            skill.name === selectedSkill?.name
+              ? 'before:absolute before:-z-10 before:-inset-2 before:rounded-md before:bg-neutral-300/25'
+              : '',
+          ]"
+        />
+      </ul>
+    </div>
   </OnClickOutside>
 </template>
 
