@@ -27,6 +27,7 @@ import {
   SiTypescript,
   SiVuedotjs,
   SiLumen,
+  SiInertia,
 } from '@kalimahapps/vue-icons'
 
 export type Skill = {
@@ -58,6 +59,7 @@ export const ethers = { name: 'Ethers', icon: SiEthers }
 export const gofiber = { name: 'GoFiber', icon: LuBarChart2, iconClass: '-rotate-90' }
 export const laravel = { name: 'Laravel', icon: SiLaravel }
 export const lumen = { name: 'Lumen', icon: SiLumen }
+export const inertia = { name: 'Inertia', icon: SiInertia }
 export const foundry = { name: 'Foundry', icon: SiCurseforge }
 export const notion = { name: 'Notion', icon: SiNotion }
 export const git = { name: 'Git', icon: SiGit }
@@ -87,6 +89,7 @@ export const skillsMap = Object.freeze({
   gofiber,
   laravel,
   lumen,
+  inertia,
   foundry,
   notion,
   git,
@@ -129,6 +132,7 @@ export const skillCategories: readonly SkillCategory[] = Object.freeze([
       skillsMap.gofiber,
       skillsMap.laravel,
       skillsMap.lumen,
+      skillsMap.inertia,
       skillsMap.foundry,
     ],
   },
