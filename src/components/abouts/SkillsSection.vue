@@ -14,7 +14,7 @@
       <ul class="flex flex-row flex-wrap items-baseline w-full gap-4">
         <li v-for="skill in category.skills" :key="skill.name">
           <AIconTooltipped
-            iconClass="text-4xl"
+            :iconClass="`text-4xl ${skill.iconClass}`"
             :icon="skill.icon"
             :tooltipLabel="skill.name"
             v-motion-slide-visible-once-bottom
