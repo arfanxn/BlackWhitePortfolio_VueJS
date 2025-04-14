@@ -1,5 +1,5 @@
 <template>
-  <AModal :show="show">
+  <AModal :isShowed="isShowed">
     <div class="flex items-center justify-center">
       <ACarousel :slides="imageUrls">
         <template v-slot:slide="{ slide, index }">
@@ -22,7 +22,7 @@ import ACarousel from '@/components/ACarousel.vue'
 import { computed } from 'vue'
 
 const props = defineProps<{
-  show: boolean
+  isShowed: boolean
   imageUrl?: string
   imageUrls?: string[]
 }>()

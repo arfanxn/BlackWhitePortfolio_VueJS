@@ -2,7 +2,7 @@
   <Teleport to="body">
     <!-- Outside modal background -->
     <div
-      v-if="show"
+      v-if="isShowed"
       role="dialog"
       class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 overflow-hidden"
       @click.self="close"
@@ -32,11 +32,11 @@
 
 <script setup lang="ts">
 import { LuX } from '@kalimahapps/vue-icons'
-import { watch, onBeforeUnmount, onMounted } from 'vue'
+import { watch, onBeforeUnmount } from 'vue'
 import { useBodyScrollLock } from '@/composables/useBodyScrollLock'
 
 type Props = {
-  show: boolean
+  isShowed: boolean
   class?: string
 }
 const props = defineProps<Props>()
@@ -63,7 +63,7 @@ const removeListeners = () => {
 
 // Add this to handle cases where modal might be closed via parent component
 const handleLockState = () => {
-  if (props.show) {
+  if (props.isShowed) {
     lockBodyScroll()
     addListeners()
   } else {
@@ -72,8 +72,6 @@ const handleLockState = () => {
   }
 }
 
-// Use both mounted and watch to ensure proper cleanup
-onMounted(handleLockState)
-watch(() => props.show, handleLockState)
+watch(() => props.isShowed, handleLockState)
 onBeforeUnmount(handleLockState)
 </script>
