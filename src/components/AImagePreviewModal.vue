@@ -1,34 +1,35 @@
 <template>
   <AModal :show="show">
     <div class="flex items-center justify-center">
-      <img
-        :src="src"
-        alt="Preview image"
-        class="max-w-full max-h-[70vh] object-contain"
-        @load="handleImageLoad"
-      />
-    </div>
-    <div
-      v-if="isLoading"
-      class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-    >
-      <LuLoaderCircle class="animate-spin text-4xl text-white" />
+      <ACarousel :slides="imageUrls">
+        <template v-slot:slide="{ slide, index }">
+          <AImage
+            containerClass="h-[70vh] "
+            class="max-w-full max-h-full object-contain"
+            :src="slide"
+            :alt="`Build image slide #${index + 1}`"
+          />
+        </template>
+      </ACarousel>
     </div>
   </AModal>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import { LuLoaderCircle } from '@kalimahapps/vue-icons'
 import AModal from '@/components/AModal.vue'
+import AImage from '@/components/AImage.vue'
+import ACarousel from '@/components/ACarousel.vue'
+import { computed } from 'vue'
 
-defineProps<{
+const props = defineProps<{
   show: boolean
-  src: string
+  imageUrl?: string
+  imageUrls?: string[]
 }>()
 
-const isLoading = ref(true)
-const handleImageLoad = () => {
-  isLoading.value = false
-}
+const imageUrls = computed(() => {
+  if (props.imageUrl && !props.imageUrls) return [props.imageUrl]
+  else if (props.imageUrl && props.imageUrls) return [props.imageUrl, ...props.imageUrls]
+  else return props.imageUrls as string[]
+})
 </script>
