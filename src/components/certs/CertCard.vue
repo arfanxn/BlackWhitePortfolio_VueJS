@@ -1,7 +1,5 @@
 <template>
-  <li
-    class="group/certificate relative flex flex-col rounded-md border bg-black border-neutral-300 p-4 hover:border-white"
-  >
+  <ACard class="group/certificate">
     <a class="cursor-pointer w-fit block" :href="certificate.url" target="_blank">
       <h3 class="font-firacode font-semibold text-white text-base md:text-lg hover:underline">
         {{ certificate.name }}
@@ -25,39 +23,33 @@
     </ul>
 
     <div
-      class="absolute lg:hidden lg:group-hover/certificate:flex bottom-4 right-4 flex flex-row gap-x-4"
+      class="absolute flex flex-row items-end lg:hidden lg:group-hover/certificate:flex bottom-2 right-2"
     >
-      <button
-        @click="showCertificateImage = true"
-        class="relative hover:before:absolute hover:before:-inset-2 hover:before:rounded-full hover:before:bg-neutral-300/25"
-      >
-        <LuEye class="relative text-xl text-neutral-300" />
-      </button>
-      <a
-        class="relative hover:before:absolute hover:before:-inset-2 hover:before:rounded-full hover:before:bg-neutral-300/25"
-        :href="certificate.url"
-        target="_blank"
-      >
-        <LuExternalLink class="text-xl text-neutral-300" />
+      <AButtonIcon @click="showModal" :icon="LuEye" />
+      <a class="inline-flex" :href="certificate.url" target="_blank">
+        <AButtonIcon :icon="LuExternalLink" />
       </a>
     </div>
 
     <AImagePreviewModal
-      :show="showCertificateImage"
-      :src="certificate.imageUrl!"
-      @close="showCertificateImage = false"
+      :show="isModalShowed"
+      :imageUrl="certificate.imageUrl!"
+      @close="closeModal"
     />
-  </li>
+  </ACard>
 </template>
 
 <script setup lang="ts">
 import AIconTooltipped from '@/components/AIconTooltipped.vue'
 import AImagePreviewModal from '@/components/AImagePreviewModal.vue'
+import AButtonIcon from '@/components/AButtonIcon.vue'
 import { LuEye, LuExternalLink } from '@kalimahapps/vue-icons'
-import type { Certificate } from '@/constants/certificateConstants'
 import moment from 'moment'
-import { ref } from 'vue'
+import { type Certificate } from '@/constants/certificateConstants'
+import { useModal } from '@/composables/useModal'
+import ACard from '../ACard.vue'
 
 defineProps<{ certificate: Certificate }>()
-const showCertificateImage = ref<boolean>(false)
+
+const { isModalShowed, showModal, closeModal } = useModal()
 </script>
