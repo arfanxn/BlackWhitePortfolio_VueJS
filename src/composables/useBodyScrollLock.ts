@@ -12,7 +12,8 @@ export const useBodyScrollLock = () => {
   }
 
   const toggleBodyScrollLock = () => {
-    isBodyScrollLocked.value = !isBodyScrollLocked.value
+    if (isBodyScrollLocked.value) unlockBodyScroll()
+    else lockBodyScroll()
   }
 
   return {
