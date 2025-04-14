@@ -10,7 +10,7 @@
         class="main-container max-h-full main-horizontal-padding main-vertical-padding space-y-2"
       >
         <div class="flex flex-row justify-end">
-          <button @click="$emit('close')" class="">
+          <button @click="close" class="">
             <LuX class="text-2xl text-neutral-300 hover:text-white" />
           </button>
         </div>
