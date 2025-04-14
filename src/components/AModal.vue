@@ -32,8 +32,10 @@
 
 <script setup lang="ts">
 import { LuX } from '@kalimahapps/vue-icons'
-import { watch, onBeforeUnmount } from 'vue'
+import { watch, onMounted, onBeforeUnmount } from 'vue'
 import { useBodyScrollLock } from '@/composables/useBodyScrollLock'
+import { useUIStore } from '@/stores/useUIStore'
+import { storeToRefs } from 'pinia'
 
 type Props = {
   isShowed: boolean
@@ -43,6 +45,7 @@ const props = defineProps<Props>()
 
 const emit = defineEmits(['close'])
 
+const { showedModalCount } = storeToRefs(useUIStore())
 const { unlockBodyScroll, lockBodyScroll } = useBodyScrollLock()
 
 const close = () => {
@@ -63,15 +66,16 @@ const removeListeners = () => {
 
 // Add this to handle cases where modal might be closed via parent component
 const handleLockState = () => {
-  if (props.isShowed) {
+  if (props.isShowed && showedModalCount.value > 0) {
     lockBodyScroll()
     addListeners()
-  } else {
+  } else if (!props.isShowed && showedModalCount.value == 0) {
     unlockBodyScroll()
     removeListeners()
   }
 }
 
+onMounted(handleLockState)
 watch(() => props.isShowed, handleLockState)
 onBeforeUnmount(handleLockState)
 </script>
