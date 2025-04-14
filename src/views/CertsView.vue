@@ -8,15 +8,15 @@
     >
       <h1 class="font-firacode font-semibold text-2xl md:text-4xl text-white">Certificates</h1>
 
-      <CertsFilterSection />
+      <CertFilter />
 
-      <CertsListSection />
+      <CertsList />
     </main>
   </Layout>
 </template>
 
 <script setup lang="ts">
 import Layout from '@/layouts/Layout.vue'
-import CertsFilterSection from '@/components/certs/CertsFilterSection.vue'
-import CertsListSection from '@/components/certs/CertsListSection.vue'
+import CertFilter from '@/components/certs/CertsFilter.vue'
+import CertsList from '@/components/certs/CertsList.vue'
 </script>
