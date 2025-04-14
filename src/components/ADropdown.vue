@@ -1,18 +1,14 @@
 <template>
-  <OnClickOutside
-    class="relative h-full"
-    @trigger="closeDropdown"
-    @mouseenter="isDropdownHovered = true"
-    @mouseleave="isDropdownHovered = false"
-  >
-    <AOutlineButton
-      class="text-sm md:text-md inline-flex items-center gap-x-1"
+  <OnClickOutside class="relative h-full" @trigger="closeDropdown">
+    <AButtonOutlined
+      class="relative text-sm md:text-md inline-flex items-center gap-x-1"
       :class="[buttonClass]"
       @click="toggleDropdown"
     >
       <slot name="button"></slot>
       <LuChevronDown class="text-xl" />
-    </AOutlineButton>
+    </AButtonOutlined>
+
     <!-- Animated Dropdown -->
     <div
       v-if="isDropdownOpen"
@@ -26,7 +22,7 @@
 </template>
 
 <script setup lang="ts">
-import AOutlineButton from '@/components/AOutlineButton.vue'
+import AButtonOutlined from '@/components/AButtonOutlined.vue'
 import { LuChevronDown } from '@kalimahapps/vue-icons'
 import { OnClickOutside } from '@vueuse/components'
 import { useDropdown } from '@/composables/useDropdown'
@@ -36,5 +32,5 @@ defineProps<{
   dropdownClass?: string
 }>()
 
-const { isDropdownOpen, isDropdownHovered, toggleDropdown, closeDropdown } = useDropdown()
+const { isDropdownOpen, toggleDropdown, closeDropdown } = useDropdown()
 </script>
