@@ -4,11 +4,11 @@
     <nav
       class="main-container mx-auto flex flex-row items-baseline justify-between py-6 md:py-6 main-horizontal-padding"
     >
-      <div class="max-w-6 md:max-w-8">
+      <figure class="max-w-6 md:max-w-8">
         <router-link to="/">
-          <img class="w-full h-auto" src="/logo.png" alt="Site logo - return to homepage" />
+          <AImage src="/logo.png" alt="Site logo - return to homepage" />
         </router-link>
-      </div>
+      </figure>
 
       <ul class="flex gap-x-4" role="navigation">
         <li v-for="navigation in navigations" :key="navigation.url">
@@ -27,4 +27,5 @@
 
 <script setup lang="ts">
 import { navigations } from '@/constants/navigationConstants'
+import AImage from '@/components/AImage.vue'
 </script>

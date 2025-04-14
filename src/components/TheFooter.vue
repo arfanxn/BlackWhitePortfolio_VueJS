@@ -5,9 +5,9 @@
     <div
       class="main-container mx-auto py-10 md:py-14 main-horizontal-padding flex flex-row justify-between gap-8"
     >
-      <figure>
+      <figure class="max-w-20 md:max-w-28">
         <router-link to="/">
-          <img class="max-w-20 md:max-w-28" src="/logo.png" alt="Logo" />
+          <AImage src="/logo.png" alt="Logo" />
         </router-link>
       </figure>
 
@@ -44,4 +44,5 @@
 <script setup lang="ts">
 import { socials } from '@/constants/socialConstants'
 import { navigations } from '@/constants/navigationConstants'
+import AImage from '@/components/AImage.vue'
 </script>

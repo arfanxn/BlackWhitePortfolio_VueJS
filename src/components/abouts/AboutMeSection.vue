@@ -1,15 +1,16 @@
 <template>
   <section class="space-y-6">
-    <figure class="flex justify-center items-center">
-      <div
-        class="max-w-3/4 md:max-w-1/2 overflow-hidden rounded-md"
+    <div class="flex justify-center items-center">
+      <AImage
         v-motion-slide-visible-once-left
         :duration="300"
         :delay="300"
-      >
-        <ProfileImage />
-      </div>
-    </figure>
+        containerClass="max-w-3/4 md:max-w-1/2 overflow-hidden rounded-md"
+        class="size-full object-cover"
+        src="/profile.jpg"
+        alt="Portrait of Arfan"
+      />
+    </div>
 
     <!-- About heading -->
     <header v-motion-fade-visible-once :duration="300" :delay="300">
@@ -45,12 +46,13 @@
         :delay="300"
         href="/path-to-resume.pdf"
         download="YourName_Resume.pdf"
-        class="font-firacode font-semibold bg-white text-black rounded-md px-4 py-2 shadow-md hover:bg-neutral-300 transition-colors duration-300 inline-flex items-center gap-x-2"
-        role="button"
-        aria-label="Download resume (PDF)"
       >
-        <span>Resume.pdf</span>
-        <LuDownload class="text-xl" />
+        <AButtonIconed
+          class="font-semibold bg-white text-black hover:bg-neutral-300 transition-colors"
+          label="Resume.pdf"
+          :icon="LuDownload"
+          iconClass="text-xl"
+        />
       </a>
     </div>
   </section>
@@ -58,5 +60,6 @@
 
 <script setup lang="ts">
 import { LuDownload } from '@kalimahapps/vue-icons'
-import ProfileImage from '@/components/abouts/ProfileImage.vue'
+import AButtonIconed from '@/components/AButtonIconed.vue'
+import AImage from '@/components/AImage.vue'
 </script>
