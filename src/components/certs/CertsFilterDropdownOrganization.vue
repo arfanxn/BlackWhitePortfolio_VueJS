@@ -13,7 +13,7 @@
         <li v-for="organization in organizations" :key="organization">
           <AButtonOutlined
             @click.stop="() => selectOrganization(organization)"
-            class="text-sm md:text-md px-2! py-1!"
+            class="text-sm md:text-base px-2! py-1!"
             :class="[organization === selectedOrganization ? 'bg-neutral-300/25' : '']"
           >
             {{ organization }}

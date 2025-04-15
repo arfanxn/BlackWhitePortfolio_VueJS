@@ -1,7 +1,7 @@
 <template>
   <OnClickOutside class="relative h-full" @trigger="closeDropdown">
     <AButtonOutlined
-      class="relative text-sm md:text-md inline-flex items-center gap-x-1"
+      class="relative text-sm md:text-base inline-flex items-center gap-x-1"
       :class="[buttonClass]"
       @click="toggleDropdown"
     >
