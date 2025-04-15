@@ -13,7 +13,7 @@
     <ADateRange
       :start="certificate.issuedAt"
       :end="certificate.expiredAt ?? 'Lifetime'"
-      class="mt-0 text-sm md:text-base"
+      class="mt-0.5 text-sm md:text-base"
     />
 
     <ul class="mt-2 flex flex-row flex-wrap items-baseline w-full gap-2 list-none">
