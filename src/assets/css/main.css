@@ -1,7 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap');
 
 @import '@/assets/css/base.css';
+
 @import 'tailwindcss';
+@plugin 'tailwind-scrollbar' {
+  nocompatible: true;
+  preferredstrategy: 'pseudoelements';
+}
+
 @import '@/assets/css/style.css';
 
 @theme {
@@ -9,8 +15,13 @@
 }
 
 :root {
+  @apply md:scrollbar-thumb-neutral-300 md:scrollbar-track-neutral-800 md:scrollbar-thin;
   background-color: black;
   color: white;
+}
+
+body {
+  @apply md:scrollbar-none;
 }
 
 #app {
