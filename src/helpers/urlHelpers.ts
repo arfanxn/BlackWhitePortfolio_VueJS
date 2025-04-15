@@ -43,8 +43,6 @@ export const fetchUrlTitle = async (url: string): Promise<string | null> => {
     const titleMatch = text.match(/<title>(.*?)<\/title>/)
     if (!titleMatch || !titleMatch[1]) return null
 
-    console.log('titleMatch:', titleMatch.toString())
-
     return titleMatch[1] // The extracted title
   } catch {
     return null
