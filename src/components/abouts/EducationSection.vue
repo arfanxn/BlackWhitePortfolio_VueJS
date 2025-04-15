@@ -25,9 +25,8 @@
             <p class="font-firacode text-neutral-300 text-sm md:text-base max-w-1/2 md:max-w-3/4">
               {{ education.field }}
             </p>
-            <time class="font-firacode text-sm text-neutral-300 md:text-base text-end">
-              {{ formatTimeRange(education.startedAt, education.finishedAt) }}
-            </time>
+
+            <ADateRange :start="education.startedAt" :end="education.finishedAt ?? 'Present'" />
           </div>
         </article>
       </li>
@@ -36,6 +35,6 @@
 </template>
 
 <script setup lang="ts">
-import { formatTimeRange } from '@/utils/stringUtils'
 import { educations } from '@/constants/educationConstants'
+import ADateRange from '@/components/ADateRange.vue'
 </script>

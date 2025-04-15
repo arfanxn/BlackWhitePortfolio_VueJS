@@ -10,11 +10,11 @@
       {{ certificate.organization }}
     </h3>
 
-    <time class="mt-0 font-firacode text-sm md:text-base text-neutral-300">
-      {{
-        `${moment(certificate.issuedAt).format('MM/YYYY')} - ${certificate.expiredAt ? moment(certificate.expiredAt).format('MM/YYYY') : 'Lifetime'}`
-      }}
-    </time>
+    <ADateRange
+      :start="certificate.issuedAt"
+      :end="certificate.expiredAt ?? 'Lifetime'"
+      class="mt-0 text-sm md:text-base"
+    />
 
     <ul class="mt-2 flex flex-row flex-wrap items-baseline w-full gap-2 list-none">
       <li v-for="skill in certificate.skills" :key="skill.name">
@@ -32,7 +32,7 @@
     </div>
 
     <AImagePreviewModal
-      :show="isModalShowed"
+      :isShowed="isModalShowed"
       :imageUrl="certificate.imageUrl!"
       @close="closeModal"
     />
@@ -40,14 +40,14 @@
 </template>
 
 <script setup lang="ts">
+import ACard from '@/components/ACard.vue'
 import AIconTooltipped from '@/components/AIconTooltipped.vue'
 import AImagePreviewModal from '@/components/AImagePreviewModal.vue'
 import AButtonIcon from '@/components/AButtonIcon.vue'
+import ADateRange from '@/components/ADateRange.vue'
 import { LuEye, LuExternalLink } from '@kalimahapps/vue-icons'
-import moment from 'moment'
 import { type Certificate } from '@/constants/certificateConstants'
 import { useModal } from '@/composables/useModal'
-import ACard from '../ACard.vue'
 
 defineProps<{ certificate: Certificate }>()
 

@@ -25,9 +25,7 @@
             <p class="font-firacode text-neutral-300 text-sm md:text-base max-w-1/2 md:max-w-3/4">
               {{ experience.role }}
             </p>
-            <time class="font-firacode text-sm text-neutral-300 md:text-base text-end">
-              {{ formatTimeRange(experience.startedAt, experience.finishedAt) }}
-            </time>
+            <ADateRange :start="experience.startedAt" :end="experience.finishedAt ?? 'Present'" />
           </div>
         </article>
       </li>
@@ -36,6 +34,5 @@
 </template>
 
 <script setup lang="ts">
-import { formatTimeRange } from '@/utils/stringUtils'
 import { experiences } from '@/constants/experienceConstants'
 </script>
