@@ -1,36 +1,28 @@
 <template>
-  <OnClickOutside class="relative h-full" @trigger="closeDropdown">
-    <AButtonOutlined
-      class="relative text-sm md:text-base inline-flex items-center gap-x-1"
-      :class="[buttonClass]"
-      @click="toggleDropdown"
-    >
-      <slot name="button"></slot>
-      <LuChevronDown class="text-xl" />
-    </AButtonOutlined>
-
-    <!-- Animated Dropdown -->
-    <div
-      v-if="isDropdownOpen"
-      v-motion-pop
-      class="absolute z-10 mt-1 left-0 bg-neutral-300/25 backdrop-blur-md rounded-md p-4"
-      :class="[dropdownClass]"
-    >
-      <slot name="dropdown"></slot>
-    </div>
-  </OnClickOutside>
+  <div
+    v-if="isOpen"
+    v-motion-pop
+    ref="dropdownElement"
+    class="absolute z-10 mt-1 left-0 bg-neutral-300/25 backdrop-blur-md rounded-md p-4"
+  >
+    <slot></slot>
+  </div>
 </template>
 
 <script setup lang="ts">
-import AButtonOutlined from '@/components/AButtonOutlined.vue'
-import { LuChevronDown } from '@kalimahapps/vue-icons'
-import { OnClickOutside } from '@vueuse/components'
-import { useDropdown } from '@/composables/useDropdown'
+import { onClickOutside } from '@vueuse/core'
+import { useTemplateRef } from 'vue'
 
-defineProps<{
-  buttonClass?: string
-  dropdownClass?: string
-}>()
+type Props = {
+  isOpen: boolean
+}
+defineProps<Props>()
+const emit = defineEmits(['close'])
 
-const { isDropdownOpen, toggleDropdown, closeDropdown } = useDropdown()
+const dropdownElement = useTemplateRef<HTMLElement>('dropdownElement')
+onClickOutside(dropdownElement, () => close())
+
+const close = () => {
+  emit('close')
+}
 </script>
