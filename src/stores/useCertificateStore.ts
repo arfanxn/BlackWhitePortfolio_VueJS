@@ -5,9 +5,25 @@ import {
 import type { Skill } from '@/constants/skillConstants'
 import { like } from '@/utils/stringUtils'
 import { defineStore } from 'pinia'
-import { ref } from 'vue'
+import { reactive, ref } from 'vue'
 
 export const useCertificateStore = defineStore('certificate', () => {
+  // ==========================================================================
+  //                                Internals
+  // ==========================================================================
+  type Sort = {
+    by: 'issuedAt' | 'expiredAt'
+    order: 'asc' | 'desc'
+  }
+  type CertificateQuery = {
+    filters: {
+      skill?: Skill
+      organization?: string
+    }
+    sorts: Sort[]
+    keyword?: string
+  }
+
   // ==========================================================================
   //                            Internal functions
   // ==========================================================================
@@ -17,9 +33,14 @@ export const useCertificateStore = defineStore('certificate', () => {
   //                                State
   // ==========================================================================
   const certificates = ref<Certificate[]>(origin_certificates.slice())
-  const keyword = ref<string | undefined>(undefined)
-  const skillFilter = ref<Skill | undefined>(undefined)
-  const organizationFilter = ref<string | undefined>(undefined)
+  const certificateQuery = reactive<CertificateQuery>({
+    filters: {
+      skill: undefined,
+      organization: undefined,
+    },
+    sorts: [],
+    keyword: undefined,
+  })
 
   // ==========================================================================
   //                                Getters
@@ -30,27 +51,36 @@ export const useCertificateStore = defineStore('certificate', () => {
   //                                Actions
   // ==========================================================================
 
-  const filter = () => {
+  const queryCertificates = () => {
+    const query = certificateQuery
+
     certificates.value = origin_certificates
       .slice()
       .filter((certificate) =>
-        keyword.value ? like(`%${keyword.value}%`, certificate.name) : true,
+        query.keyword ? like(`%${query.keyword}%`, certificate.name) : true,
       )
       .filter((certificate) =>
-        skillFilter.value
-          ? certificate.skills.some((skill) => skill.name === skillFilter.value!.name)
+        query.filters.skill
+          ? certificate.skills.some((skill) => skill.name === query.filters.skill!.name)
           : true,
       )
       .filter((certificate) =>
-        organizationFilter.value ? certificate.organization === organizationFilter.value : true,
+        query.filters.organization ? certificate.organization === query.filters.organization : true,
       )
-  }
-
-  const reset = () => {
-    certificates.value = origin_certificates.slice()
-    keyword.value = undefined
-    skillFilter.value = undefined
-    organizationFilter.value = undefined
+      .sort((a, b) => {
+        for (const sort of query.sorts) {
+          if (sort.by === 'issuedAt') {
+            return sort.order === 'asc'
+              ? a.issuedAt.getTime() - b.issuedAt.getTime()
+              : b.issuedAt.getTime() - a.issuedAt.getTime()
+          } else if (sort.by === 'expiredAt') {
+            return sort.order === 'asc'
+              ? a.expiredAt!.getTime() - b.expiredAt!.getTime()
+              : b.expiredAt!.getTime() - a.expiredAt!.getTime()
+          }
+        }
+        return 0
+      })
   }
 
   // ==========================================================================
@@ -61,13 +91,10 @@ export const useCertificateStore = defineStore('certificate', () => {
   return {
     // ============================== State variables ==============================
     certificates,
-    keyword,
-    skillFilter,
-    organizationFilter,
+    certificateQuery,
     // ================================= Getters ===================================
     //
     // ================================= Methods ===================================
-    filter,
-    reset,
+    queryCertificates,
   }
 })
