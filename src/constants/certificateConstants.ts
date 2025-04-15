@@ -20,6 +20,8 @@ export const organizationsMap = Object.freeze({
   udemy: 'Udemy',
 })
 
+export const organizations: readonly string[] = Object.values(organizationsMap)
+
 export const certificates: readonly Certificate[] = Object.freeze([
   {
     name: 'DET - Duolingo English Test',
