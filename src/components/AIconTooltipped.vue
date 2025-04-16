@@ -21,7 +21,7 @@ defineProps<{
   icon: Component
   iconClass?: string
   tooltipClass?: string
-  tooltipLabel?: string
+  tooltipLabel: string
 }>()
 
 const iconElement = useTemplateRef<HTMLElement>('iconElement')
