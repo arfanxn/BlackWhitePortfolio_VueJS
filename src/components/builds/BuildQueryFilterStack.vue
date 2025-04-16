@@ -25,6 +25,7 @@
     >
       <template v-slot:option="{ option: stack, isSelected }">
         <AButtonIcon
+          :tooltipLabel="stack.name"
           :icon="stack.icon"
           iconClass="text-2xl!"
           class="rounded-md!"

@@ -25,6 +25,7 @@
     >
       <template v-slot:option="{ option: skill, isSelected }">
         <AButtonIcon
+          :tooltipLabel="skill.name"
           :icon="skill.icon"
           iconClass="text-2xl!"
           class="rounded-md!"
