@@ -15,15 +15,11 @@
 
     <ADropdownSelect
       @close="closeDropdown"
-      @optionsSelected="
-        (selectedOptions: Stack[]) => {
-          buildQuery.filters.stacks = selectedOptions ?? []
-          buildStore.queryBuilds()
-        }
-      "
+      @optionsSelected="buildStore.queryBuilds"
       :isOpen="isDropdownOpen"
-      :options="stacks"
       :maxSelectCount="3"
+      :options="stacks"
+      v-model:selectedOptions="buildQuery.filters.stacks"
       class="min-w-58 md:min-w-58 p-2!"
       selectClass="flex flex-row flex-wrap gap-1"
     >

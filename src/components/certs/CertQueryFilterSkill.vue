@@ -16,14 +16,10 @@
 
     <ADropdownSelect
       @close="closeDropdown"
-      @optionsSelected="
-        (selectedOptions: Skill[]) => {
-          certificateQuery.filters.skill = selectedOptions[0] ?? undefined
-          certificateStore.queryCertificates()
-        }
-      "
+      @optionSelected="certificateStore.queryCertificates"
       :isOpen="isDropdownOpen"
       :options="skills"
+      v-model:selectedOption="certificateQuery.filters.skill"
       class="min-w-58 md:min-w-58 p-2!"
       selectClass="flex flex-row flex-wrap gap-1"
     >
@@ -51,7 +47,6 @@ import {
   certificates as origin_certificates,
   type Certificate,
 } from '@/constants/certificateConstants'
-import { type Skill } from '@/constants/skillConstants'
 import AButtonIcon from '../AButtonIcon.vue'
 
 const certificateStore = useCertificateStore()

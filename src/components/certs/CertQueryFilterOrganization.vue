@@ -1,8 +1,6 @@
 <template>
   <div class="relative">
-    <AButtonOutlined
-      @click="toggleDropdown"
-    >
+    <AButtonOutlined @click="toggleDropdown">
       <span>Organization{{ certificateQuery.filters.organization ? ':' : '' }}</span>
       <span v-if="certificateQuery.filters.organization">
         {{ certificateQuery.filters.organization }}
@@ -12,14 +10,10 @@
 
     <ADropdownSelect
       @close="closeDropdown"
-      @optionsSelected="
-        (selectedOptions: string[]) => {
-          certificateQuery.filters.organization = selectedOptions[0] ?? undefined
-          certificateStore.queryCertificates()
-        }
-      "
+      @optionSelected="certificateStore.queryCertificates"
       :isOpen="isDropdownOpen"
       :options="organizations"
+      v-model:selectedOption="certificateQuery.filters.organization"
       class="min-w-[50vw] md:min-w-96"
       selectClass="flex flex-row flex-wrap gap-4"
     >
