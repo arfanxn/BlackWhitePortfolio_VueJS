@@ -1,5 +1,5 @@
 <template>
-  <ACard @click.stop="showBuildModal" class="group/build">
+  <ACard @click.stop="openBuildModal" class="group/build">
     <figure class="relative w-full rounded-md overflow-hidden">
       <AImage
         overlayClass="md:bg-black/25 md:group-hover/build:bg-transparent"
@@ -37,10 +37,10 @@
     </section>
 
     <div class="absolute lg:hidden lg:group-hover/build:flex bottom-2 right-2">
-      <AButtonIcon :icon="LuInfo" @click.stop="showBuildModal" />
+      <AButtonIcon :icon="LuInfo" @click.stop="openBuildModal" />
     </div>
 
-    <BuildModal :isShowed="isBuildModalShowed" :build="build" @close="closeBuildModal" />
+    <BuildModal :isOpen="isBuildModalOpen" :build="build" @close="closeBuildModal" />
   </ACard>
 </template>
 
@@ -59,8 +59,8 @@ import { useModal } from '@/composables/useModal'
 const props = defineProps<{ build: Build }>()
 
 const {
-  isModalShowed: isBuildModalShowed,
-  showModal: showBuildModal,
+  isModalOpen: isBuildModalOpen,
+  openModal: openBuildModal,
   closeModal: closeBuildModal,
 } = useModal()
 
