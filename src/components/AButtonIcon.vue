@@ -1,5 +1,5 @@
 <template>
-  <AButton class="group relative p-2! rounded-full! overflow-hidden hover:bg-neutral-300/25">
+  <AButton class="relative p-2! rounded-full! hover:bg-neutral-300/25">
     <AIconTooltipped
       v-if="tooltipLabel"
       :icon="icon"
