@@ -1,28 +1,25 @@
 <template>
   <Teleport to="body">
-    <!-- Outside modal background -->
+    <!-- Modal background overlay that appears when the modal is open -->
     <div
-      v-if="isShowed"
-      role="dialog"
+      v-if="isOpen"
       class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 overflow-hidden"
-      @click.self="close"
+      @click.stop="close"
     >
-      <!-- Positioner -->
-      <div
-        class="main-container main-horizontal-padding main-vertical-padding space-y-2 overflow-hidden"
-      >
-        <!-- Close button container -->
+      <!-- Container for the modal content -->
+      <div class="layout-container layout-horizontal-padding space-y-2 overflow-hidden">
+        <!-- Container for the close button, aligned to the right -->
         <div class="flex flex-row justify-end">
-          <button @click="close" class="">
-            <LuX class="text-2xl text-neutral-300 hover:text-white" />
-          </button>
+          <AButtonIcon @click="close" :icon="LuX" iconClass="text-2xl! font-bold!" />
         </div>
-        <!-- Modal container -->
+        <!-- Modal content area with a blurred background and rounded corners -->
         <div
           v-motion-pop
-          class="relative bg-neutral-300/25 backdrop-blur-md rounded-md p-4 h-[calc(70vh+2rem)] overflow-y-auto"
+          class="relative bg-neutral-300/25 backdrop-blur-md rounded-md p-4 max-h-[calc(70vh+2rem)] scrollbar-thin overflow-y-auto"
           :class="props.class"
+          @click.stop
         >
+          <!-- Slot for dynamic content to be injected into the modal -->
           <slot></slot>
         </div>
       </div>
@@ -32,50 +29,17 @@
 
 <script setup lang="ts">
 import { LuX } from '@kalimahapps/vue-icons'
-import { watch, onMounted, onBeforeUnmount } from 'vue'
-import { useBodyScrollLock } from '@/composables/useBodyScrollLock'
-import { useUIStore } from '@/stores/useUIStore'
-import { storeToRefs } from 'pinia'
+import AButtonIcon from '@/components/AButtonIcon.vue'
 
 type Props = {
-  isShowed: boolean
+  isOpen: boolean
   class?: string
 }
 const props = defineProps<Props>()
 
 const emit = defineEmits(['close'])
 
-const { showedModalCount } = storeToRefs(useUIStore())
-const { unlockBodyScroll, lockBodyScroll } = useBodyScrollLock()
-
 const close = () => {
   emit('close')
 }
-
-const handleKeydown = (e: KeyboardEvent) => {
-  if (e.key === 'Escape') close()
-}
-
-const addListeners = () => {
-  window.addEventListener('keydown', handleKeydown)
-}
-
-const removeListeners = () => {
-  window.removeEventListener('keydown', handleKeydown)
-}
-
-// Add this to handle cases where modal might be closed via parent component
-const handleLockState = () => {
-  if (props.isShowed && showedModalCount.value > 0) {
-    lockBodyScroll()
-    addListeners()
-  } else if (!props.isShowed && showedModalCount.value == 0) {
-    unlockBodyScroll()
-    removeListeners()
-  }
-}
-
-onMounted(handleLockState)
-watch(() => props.isShowed, handleLockState)
-onBeforeUnmount(handleLockState)
 </script>

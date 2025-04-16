@@ -1,17 +1,15 @@
 <template>
-  <AModal :isShowed="isShowed">
-    <div class="flex items-center justify-center">
-      <ACarousel :slides="imageUrls">
-        <template v-slot:slide="{ slide, index }">
-          <AImage
-            containerClass="h-[70vh] "
-            class="max-w-full max-h-full object-contain"
-            :src="slide"
-            :alt="`Build image slide #${index + 1}`"
-          />
-        </template>
-      </ACarousel>
-    </div>
+  <AModal :isOpen="isOpen">
+    <ACarousel :slides="imageUrls">
+      <template v-slot:slide="{ slide, index }">
+        <AImage
+          containerClass="flex items-center justify-center h-[70vh]"
+          class="max-w-full max-h-full object-contain"
+          :src="slide"
+          :alt="`Build image slide #${index + 1}`"
+        />
+      </template>
+    </ACarousel>
   </AModal>
 </template>
 
@@ -22,7 +20,7 @@ import ACarousel from '@/components/ACarousel.vue'
 import { computed } from 'vue'
 
 const props = defineProps<{
-  isShowed: boolean
+  isOpen: boolean
   imageUrl?: string
   imageUrls?: string[]
 }>()
