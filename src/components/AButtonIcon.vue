@@ -1,6 +1,5 @@
 <template>
-  <AButton class="group relative p-2! rounded-full! overflow-hidden">
-    <div class="absolute inset-0 group-hover:bg-neutral-300/25"></div>
+  <AButton class="group relative p-2! rounded-full! overflow-hidden hover:bg-neutral-300/25">
     <component :is="icon" class="text-xl text-neutral-300" :class="[iconClass]" />
   </AButton>
 </template>
