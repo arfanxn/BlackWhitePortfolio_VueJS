@@ -7,8 +7,7 @@ const router = createRouter({
     { path: '/', component: import('@/views/AboutView.vue') },
     { path: '/builds', component: import('@/views/BuildsView.vue'), meta: { title: 'Builds' } },
     { path: '/certs', component: import('@/views/CertsView.vue'), meta: { title: 'Certs' } },
-    { path: '/test', component: import('@/views/tests/TestView.vue') },
-    { path: '/modal-test', component: import('@/views/tests/ModalTestView.vue') },
+    { path: '/:pathMatch(.*)*', component: import('@/views/errors/PageNotFoundView.vue') },
   ],
   scrollBehavior(to, from, savedPosition) {
     // always scroll to top when navigating
