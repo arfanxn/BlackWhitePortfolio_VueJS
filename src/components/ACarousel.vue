@@ -15,8 +15,8 @@
       v-if="slides.length > 1"
       class="absolute z-20 inset-0 flex flex-row items-center justify-between"
     >
-      <AButtonIcon @click="prev" :icon="LuChevronLeft" iconClass="text-4xl!" />
-      <AButtonIcon @click="next" :icon="LuChevronRight" iconClass="text-4xl!" />
+      <AButtonIcon @click="prev" :icon="LuChevronLeft" iconClass="text-2xl! md:text-4xl!" />
+      <AButtonIcon @click="next" :icon="LuChevronRight" iconClass="text-2xl! md:text-4xl!" />
     </nav>
   </div>
 </template>
