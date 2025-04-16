@@ -6,7 +6,7 @@
     >
       <figure class="max-w-6 md:max-w-8">
         <router-link to="/">
-          <AImage src="/logo.png" alt="Site logo - return to homepage" loaderClass="hidden" />
+          <AImage src="/logo.png" alt="Logo" loaderClass="hidden" />
         </router-link>
       </figure>
 

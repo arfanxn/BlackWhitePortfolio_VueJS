@@ -4,9 +4,9 @@
       <template v-slot:slide="{ slide, index }">
         <AImage
           containerClass="flex items-center justify-center "
-          class="max-w-full max-h-[70vh] object-contain"
+          class="max-w-full min-h-24 max-h-[70vh] object-contain"
           :src="slide"
-          :alt="`Build image slide #${index + 1}`"
+          :alt="`Image #${index + 1}`"
         />
       </template>
     </ACarousel>

@@ -6,7 +6,7 @@
         :duration="500"
         :delay="300"
         containerClass="max-w-3/4 md:max-w-1/2 overflow-hidden rounded-md"
-        class="size-full object-cover"
+        class="min-h-24 min-w-24 object-cover"
         src="/profile.jpg"
         alt="Portrait of Arfan"
       />

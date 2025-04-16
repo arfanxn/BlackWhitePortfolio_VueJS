@@ -1,8 +1,12 @@
 <template>
   <AModal :isOpen="isOpen" class="font-firacode text-neutral-300">
     <!-- Image Section -->
-    <button @click="openImagePriviewModal" class="relative rounded-md overflow-hidden">
-      <AImage :src="build.imageUrls[0]" :alt="`Screenshot of ${build.title} build`" />
+    <button @click="openImagePriviewModal" class="relative w-full rounded-md overflow-hidden">
+      <AImage
+        :src="build.imageUrls[0]"
+        :alt="`${build.title} build image`"
+        class="min-h-24"
+      />
       <div
         class="absolute inset-0 flex flex-row items-center justify-center bg-black/25 opacity-0 hover:opacity-100 active:opacity-100 transition-opacity duration-300"
       >
