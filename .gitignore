@@ -1,4 +1,5 @@
 .env
+src/views/*tests*/*
 
 # Logs
 logs
