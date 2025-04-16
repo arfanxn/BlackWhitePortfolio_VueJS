@@ -3,7 +3,7 @@
     <component ref="iconElement" :is="icon" class="text-neutral-300" :class="[iconClass]" />
     <!-- Tooltip with pseudo-element arrow -->
     <div
-      class="absolute -top-8 left-1/2 -translate-x-1/2 opacity-100 group-hover/skill:opacity-100 transition-opacity duration-300 px-2 py-1 bg-neutral-300 rounded-md font-firacode text-xs text-black whitespace-nowrap before:absolute before:bottom-[-4px] before:left-1/2 before:-translate-x-1/2 before:w-2 before:h-2 before:bg-neutral-300 before:rotate-45 before:content-['']"
+      class="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 bg-neutral-300 rounded-md text-xs text-black font-firacode whitespace-nowrap before:absolute before:bottom-[-4px] before:left-1/2 before:-translate-x-1/2 before:w-2 before:h-2 before:bg-neutral-300 before:rotate-45 before:content-['']"
       :class="[isHovered ? 'block' : 'hidden', tooltipClass]"
     >
       <slot name="tooltip">
