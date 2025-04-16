@@ -3,7 +3,7 @@
   <div class="relative flex flex-col justify-between min-h-screen">
     <TheHeader />
 
-    <main class="relative main-container mx-auto main-horizontal-padding">
+    <main class="relative layout-container mx-auto layout-horizontal-padding">
       <slot />
     </main>
 
