@@ -38,23 +38,23 @@
 <script setup lang="ts">
 import { socials } from '@/constants/socialConstants'
 import { useTimeout } from '@vueuse/core'
-import { useScrollLock } from '@vueuse/core'
 import { onBeforeUnmount, onMounted } from 'vue'
+import { useBodyScrollLock } from '@/composables/useBodyScrollLock'
 
-const scrollLock = useScrollLock(document.body)
+const { lockBodyScroll, unlockBodyScroll } = useBodyScrollLock()
 
 // Calculate total animation duration for scroll unlock
 const animationDurationCount =
   500 /* the animation duration */ + 900 /* the total delays */ + socials.length * 50
 
 onMounted(() => {
-  scrollLock.value = true
+  lockBodyScroll()
 
   useTimeout(animationDurationCount, {
-    callback: () => (scrollLock.value = false),
+    callback: () => unlockBodyScroll(),
   })
 })
 onBeforeUnmount(() => {
-  scrollLock.value = false
+  unlockBodyScroll()
 })
 </script>
