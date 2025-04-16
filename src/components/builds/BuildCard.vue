@@ -3,7 +3,7 @@
     <figure class="relative w-full rounded-md overflow-hidden">
       <AImage
         overlayClass="md:bg-black/25 md:group-hover/build:bg-transparent"
-        class="min-h-24"
+        class="aspect-3/2 object-cover"
         :src="build.imageUrls[0]"
         :alt="`${build.title} build image`"
       />
