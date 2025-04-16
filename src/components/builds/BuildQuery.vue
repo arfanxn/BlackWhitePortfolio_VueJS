@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <section>
     <div class="flex flex-col gap-4 md:gap-4">
       <AFieldIconed
         v-model="buildQuery.keyword"
@@ -13,7 +13,7 @@
         <BuildQueryFilterStack />
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">
