@@ -25,14 +25,14 @@
     <div
       class="absolute flex flex-row items-end lg:hidden lg:group-hover/certificate:flex bottom-2 right-2"
     >
-      <AButtonIcon @click="showModal" :icon="LuEye" />
+      <AButtonIcon @click="openModal" :icon="LuEye" />
       <a class="inline-flex" :href="certificate.url" target="_blank">
         <AButtonIcon :icon="LuExternalLink" />
       </a>
     </div>
 
     <AImagePreviewModal
-      :isShowed="isModalShowed"
+      :isOpen="isModalOpen"
       :imageUrl="certificate.imageUrl!"
       @close="closeModal"
     />
@@ -51,5 +51,5 @@ import { useModal } from '@/composables/useModal'
 
 defineProps<{ certificate: Certificate }>()
 
-const { isModalShowed, showModal, closeModal } = useModal()
+const { isModalOpen, openModal, closeModal } = useModal()
 </script>
