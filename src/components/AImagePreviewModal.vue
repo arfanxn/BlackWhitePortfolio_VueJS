@@ -3,8 +3,8 @@
     <ACarousel :slides="imageUrls">
       <template v-slot:slide="{ slide, index }">
         <AImage
-          containerClass="flex items-center justify-center h-[70vh]"
-          class="max-w-full max-h-full object-contain"
+          containerClass="flex items-center justify-center "
+          class="max-w-full max-h-[70vh] object-contain"
           :src="slide"
           :alt="`Build image slide #${index + 1}`"
         />
