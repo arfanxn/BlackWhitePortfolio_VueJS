@@ -3,7 +3,7 @@ import {
   type Certificate,
 } from '@/constants/certificateConstants'
 import type { Skill } from '@/constants/skillConstants'
-import { like } from '@/utils/stringUtils'
+import { like } from '@/utils/booleanUtils'
 import { defineStore } from 'pinia'
 import { reactive, ref } from 'vue'
 

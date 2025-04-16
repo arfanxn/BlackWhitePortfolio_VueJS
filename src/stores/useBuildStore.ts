@@ -1,6 +1,6 @@
 import { builds as origin_builds, type Build } from '@/constants/buildConstants'
 import { type Stack } from '@/constants/stackConstants'
-import { like } from '@/utils/stringUtils'
+import { like } from '@/utils/booleanUtils'
 import { defineStore } from 'pinia'
 import { reactive, ref } from 'vue'
 
