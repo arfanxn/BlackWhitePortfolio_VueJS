@@ -1,23 +1,23 @@
 import { ref } from 'vue'
 
 export const useModal = () => {
-  const isModalShowed = ref(false)
+  const isModalOpen = ref(false)
 
-  const showModal = () => {
-    isModalShowed.value = true
+  const openModal = () => {
+    isModalOpen.value = true
   }
 
   const closeModal = () => {
-    isModalShowed.value = false
+    isModalOpen.value = false
   }
 
   const toggleModal = () => {
-    isModalShowed.value = !isModalShowed.value
+    isModalOpen.value = !isModalOpen.value
   }
 
   return {
-    isModalShowed,
-    showModal,
+    isModalOpen,
+    openModal,
     closeModal,
     toggleModal,
   }
