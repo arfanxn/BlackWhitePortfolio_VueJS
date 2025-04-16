@@ -5,7 +5,7 @@
       <AImage
         :src="build.imageUrls[0]"
         :alt="`${build.title} build image`"
-        class="min-h-24"
+        class="min-h-24 aspect-auto"
       />
       <div
         class="absolute inset-0 flex flex-row items-center justify-center bg-black/25 opacity-0 hover:opacity-100 active:opacity-100 transition-opacity duration-300"
