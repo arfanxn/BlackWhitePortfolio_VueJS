@@ -1,11 +1,11 @@
-.main-container {
+.layout-container {
   width: 100%;
   @media (width >= 48rem /* 768px */) {
     max-width: 48rem /* 768px */;
   }
 }
 
-.main-horizontal-padding {
+.layout-horizontal-padding {
   @apply px-6 md:px-8;
 }
 

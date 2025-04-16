@@ -3,7 +3,7 @@
   <footer class="w-full main-top-margin">
     <hr class="border-t border-neutral-300/25" />
     <div
-      class="main-container mx-auto py-10 md:py-14 main-horizontal-padding flex flex-row justify-between gap-8"
+      class="layout-container mx-auto py-10 md:py-14 layout-horizontal-padding flex flex-row justify-between gap-8"
     >
       <figure class="max-w-20 md:max-w-28">
         <router-link to="/">
