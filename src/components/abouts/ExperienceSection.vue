@@ -12,7 +12,7 @@
         :key="experience.organization"
         class="group"
         v-motion-slide-visible-once-left
-        :duration="300"
+        :duration="500"
         :delay="300"
       >
         <article>

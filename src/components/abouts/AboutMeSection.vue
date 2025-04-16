@@ -3,7 +3,7 @@
     <div class="flex justify-center items-center">
       <AImage
         v-motion-slide-visible-once-left
-        :duration="300"
+        :duration="500"
         :delay="300"
         containerClass="max-w-3/4 md:max-w-1/2 overflow-hidden rounded-md"
         class="size-full object-cover"
@@ -42,7 +42,7 @@
     <div class="mt-4">
       <a
         v-motion-slide-visible-once-left
-        :duration="300"
+        :duration="500"
         :delay="300"
         href="/path-to-resume.pdf"
         download="YourName_Resume.pdf"

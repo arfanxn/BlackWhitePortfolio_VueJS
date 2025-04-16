@@ -18,7 +18,7 @@
             :icon="skill.icon"
             :tooltipLabel="skill.name"
             v-motion-slide-visible-once-bottom
-            :duration="300"
+            :duration="500"
             :delay="300"
           />
         </li>
