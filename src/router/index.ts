@@ -4,10 +4,25 @@ import { useTitle } from '@vueuse/core'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    { path: '/', component: import('@/views/AboutView.vue') },
-    { path: '/builds', component: import('@/views/BuildsView.vue'), meta: { title: 'Builds' } },
-    { path: '/certs', component: import('@/views/CertsView.vue'), meta: { title: 'Certs' } },
-    { path: '/:pathMatch(.*)*', component: import('@/views/errors/PageNotFoundView.vue') },
+    {
+      path: '/',
+      component: () => import('@/views/AboutView.vue'),
+    },
+    {
+      path: '/builds',
+      component: () => import('@/views/BuildsView.vue'),
+      meta: { title: 'Builds' },
+    },
+    {
+      path: '/certs',
+      component: () => import('@/views/CertsView.vue'),
+      meta: { title: 'Certs' },
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      component: () => import('@/views/errors/PageNotFoundView.vue'),
+      meta: { title: '404' },
+    },
   ],
   scrollBehavior(to, from, savedPosition) {
     // always scroll to top when navigating
