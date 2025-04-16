@@ -35,4 +35,5 @@
 
 <script setup lang="ts">
 import { experiences } from '@/constants/experienceConstants'
+import ADateRange from '@/components/ADateRange.vue'
 </script>
