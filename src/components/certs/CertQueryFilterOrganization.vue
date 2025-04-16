@@ -1,6 +1,8 @@
 <template>
   <div class="relative">
-    <AButtonOutlined @click="toggleDropdown" class="inline-flex items-center gap-x-1">
+    <AButtonOutlined
+      @click="toggleDropdown"
+    >
       <span>Organization{{ certificateQuery.filters.organization ? ':' : '' }}</span>
       <span v-if="certificateQuery.filters.organization">
         {{ certificateQuery.filters.organization }}

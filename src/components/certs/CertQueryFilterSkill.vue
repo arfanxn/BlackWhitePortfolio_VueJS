@@ -1,6 +1,6 @@
 <template>
   <div class="relative">
-    <AButtonOutlined @click="toggleDropdown" class="inline-flex items-center gap-x-1">
+    <AButtonOutlined @click="toggleDropdown">
       <span>
         <span>Skill</span>
         <span v-if="certificateQuery.filters.skill">:</span>
@@ -28,13 +28,12 @@
       selectClass="flex flex-row flex-wrap gap-1"
     >
       <template v-slot:option="{ option: skill, isSelected }">
-        <button
-          type="button"
-          class="p-2 rounded-md"
+        <AButtonIcon
+          :icon="skill.icon"
+          iconClass="text-2xl!"
+          class="rounded-md!"
           :class="[isSelected ? 'bg-neutral-300/25' : '']"
-        >
-          <AIconTooltipped iconClass="text-2xl" :icon="skill.icon" :tooltipLabel="skill.name" />
-        </button>
+        />
       </template>
     </ADropdownSelect>
   </div>
@@ -53,6 +52,7 @@ import {
   type Certificate,
 } from '@/constants/certificateConstants'
 import { type Skill } from '@/constants/skillConstants'
+import AButtonIcon from '../AButtonIcon.vue'
 
 const certificateStore = useCertificateStore()
 const { certificateQuery } = storeToRefs(certificateStore)
