@@ -11,8 +11,9 @@
     <div
       v-if="isLoading"
       class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+      :class="[loaderClass]"
     >
-      <LuLoaderCircle class="animate-spin text-4xl text-white" />
+      <LuLoaderCircle class="animate-spin text-4xl text-white" :class="[loaderIconClass]" />
     </div>
   </figure>
 </template>
@@ -27,6 +28,8 @@ const props = defineProps<{
   containerClass?: string
   class?: string
   overlayClass?: string
+  loaderClass?: string
+  loaderIconClass?: string
 }>()
 
 const overlayClass = computed(() =>
