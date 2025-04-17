@@ -15,13 +15,13 @@
 }
 
 :root {
-  @apply md:scrollbar-thumb-neutral-300 md:scrollbar-track-neutral-800 md:scrollbar-thin;
+  @apply scrollbar-thumb-neutral-300 scrollbar-track-neutral-800 scrollbar-thin scrollbar-thumb-rounded-md scrollbar-track-rounded-md;
   background-color: black;
   color: white;
 }
 
 body {
-  @apply md:scrollbar-none;
+  @apply scrollbar-none;
 }
 
 #app {
