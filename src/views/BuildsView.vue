@@ -6,7 +6,7 @@
       :duration="500"
       :delay="0"
     >
-      <h1 class="font-firacode font-semibold text-2xl md:text-4xl text-white">Builds</h1>
+      <h1 class="font-firacode font-bold text-2xl md:text-4xl text-white">Builds</h1>
 
       <BuildQuery />
       <BuildList />
