@@ -16,7 +16,7 @@
         <div
           v-motion-pop
           class="relative bg-neutral-300/25 backdrop-blur-md rounded-md p-4 max-h-[calc(70vh+2rem)] scrollbar-thin overflow-y-auto"
-          :class="props.class"
+          :class="modalClass"
           @click.stop
         >
           <!-- Slot for dynamic content to be injected into the modal -->
@@ -33,9 +33,9 @@ import AButtonIcon from '@/components/AButtonIcon.vue'
 
 type Props = {
   isOpen: boolean
-  class?: string
+  modalClass?: string
 }
-const props = defineProps<Props>()
+defineProps<Props>()
 
 const emit = defineEmits(['close'])
 
