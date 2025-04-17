@@ -5,8 +5,8 @@
         v-motion-slide-visible-once-left
         :duration="500"
         :delay="300"
-        containerClass="max-w-3/4 md:max-w-1/2 overflow-hidden rounded-md"
-        class="aspect-square object-cover"
+        figureClass="max-w-3/4 md:max-w-1/2 overflow-hidden rounded-md"
+        imgClass="aspect-square object-cover"
         src="/profile.jpg"
         alt="Portrait of Arfan"
       />

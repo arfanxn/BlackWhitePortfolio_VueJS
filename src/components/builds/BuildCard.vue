@@ -1,13 +1,12 @@
 <template>
   <ACard @click.stop="openBuildModal" class="group/build">
-    <figure class="relative w-full rounded-md overflow-hidden">
-      <AImage
-        overlayClass="md:bg-black/25 md:group-hover/build:bg-transparent"
-        class="aspect-3/2 object-cover"
-        :src="build.imageUrls[0]"
-        :alt="`${build.title} build image`"
-      />
-    </figure>
+    <AImage
+      figureClass="rounded-md overflow-hidden"
+      imgClass="w-full min-h-24 aspect-3/2 object-cover"
+      overlayClass="bg-black/25 group-hover/build:bg-transparent transition-colors duration-300"
+      :src="build.imageUrls[0]"
+      :alt="`${build.title} build image`"
+    />
 
     <header class="mt-2">
       <h3 class="font-firacode font-semibold text-white text-base md:text-lg">

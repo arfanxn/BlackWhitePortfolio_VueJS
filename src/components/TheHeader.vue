@@ -4,11 +4,7 @@
     <nav
       class="layout-container mx-auto flex flex-row items-baseline justify-between py-6 md:py-6 layout-horizontal-padding"
     >
-      <figure class="max-w-6 md:max-w-8">
-        <router-link to="/">
-          <AImage src="/logo.png" alt="Logo" loaderClass="hidden" />
-        </router-link>
-      </figure>
+      <ALogo imgClass="max-w-6 md:max-w-8" />
 
       <ul class="flex gap-x-4" role="navigation">
         <li v-for="navigation in navigations" :key="navigation.url">
@@ -27,5 +23,5 @@
 
 <script setup lang="ts">
 import { navigations } from '@/constants/navigationConstants'
-import AImage from '@/components/AImage.vue'
+import ALogo from '@/components/ALogo.vue'
 </script>

@@ -1,10 +1,10 @@
 <template>
-  <figure class="group/image relative" :class="[containerClass]">
+  <figure class="relative" :class="[figureClass]">
     <img
       v-lazy="{ src: src, lifecycle: lifecycle }"
       :alt="alt"
-      class="max-w-full object-contain"
-      :class="[props.class]"
+      class=""
+      :class="[props.imgClass]"
     />
     <div class="absolute inset-0" :class="[overlayClass]"></div>
     <div
@@ -18,24 +18,18 @@
 </template>
 
 <script setup lang="ts">
-import { computed, reactive, ref } from 'vue'
+import { reactive, ref } from 'vue'
 import { LuLoaderCircle } from '@kalimahapps/vue-icons'
 
 const props = defineProps<{
   src?: string
   alt?: string
-  containerClass?: string
-  class?: string
+  figureClass?: string
+  imgClass?: string
   overlayClass?: string
   loaderClass?: string
   loaderIconClass?: string
 }>()
-
-const overlayClass = computed(() =>
-  props.overlayClass
-    ? `${props.overlayClass} group-hover/image:bg-transparent transition-colors duration-300`
-    : ``,
-)
 
 const isLoading = ref(true)
 

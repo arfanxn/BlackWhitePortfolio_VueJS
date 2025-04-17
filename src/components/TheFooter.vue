@@ -5,11 +5,7 @@
     <div
       class="layout-container mx-auto py-10 md:py-14 layout-horizontal-padding flex flex-row justify-between gap-8"
     >
-      <figure class="max-w-20 md:max-w-28">
-        <router-link to="/">
-          <AImage src="/logo.png" alt="Logo" loaderClass="hidden" />
-        </router-link>
-      </figure>
+      <ALogo imgClass="max-w-20 md:max-w-28" />
 
       <nav>
         <ul>
@@ -44,5 +40,5 @@
 <script setup lang="ts">
 import { socials } from '@/constants/socialConstants'
 import { navigations } from '@/constants/navigationConstants'
-import AImage from '@/components/AImage.vue'
+import ALogo from '@/components/ALogo.vue'
 </script>
