@@ -1,18 +1,18 @@
 <template>
-  <AModal :isOpen="isOpen" class="font-firacode text-neutral-300">
+  <AModal :isOpen="isOpen" modalClass="font-firacode text-neutral-300">
     <!-- Image Section -->
-    <button @click="openImagePriviewModal" class="relative w-full rounded-md overflow-hidden">
+    <figure class="relative w-full rounded-md overflow-hidden">
       <AImage
         :src="build.imageUrls[0]"
         :alt="`${build.title} build image`"
-        class="min-h-24 aspect-auto"
+        imgClass="max-w-full min-h-24 aspect-auto object-contain"
       />
       <div
-        class="absolute inset-0 flex flex-row items-center justify-center bg-black/25 opacity-0 hover:opacity-100 active:opacity-100 transition-opacity duration-300"
+        class="absolute inset-x-0 bottom-0 bg-black/25 flex flex-row items-center justify-end p-1 border-t border-neutral-300/25"
       >
-        <LuEye class="text-4xl" />
+        <AButtonIcon @click="openImagePreviewModal" :icon="LuEye" iconClass="md:text-2xl! " />
       </div>
-    </button>
+    </figure>
 
     <!-- Project Details -->
     <section class="space-y-4">
@@ -61,7 +61,7 @@
     </section>
 
     <AImagePreviewModal
-      :isOpen="isImagePriviewModalShowed"
+      :isOpen="isImagePreviewModalOpen"
       :imageUrls="build.imageUrls"
       @close="closeImagePriviewModal"
     />
@@ -79,6 +79,7 @@ import { type Build } from '@/constants/buildConstants'
 import { useModal } from '@/composables/useModal'
 import moment from 'moment'
 import { computed } from 'vue'
+import AButtonIcon from '@/components/AButtonIcon.vue'
 
 const props = defineProps<{
   isOpen: boolean
@@ -86,8 +87,8 @@ const props = defineProps<{
 }>()
 
 const {
-  isModalOpen: isImagePriviewModalShowed,
-  openModal: openImagePriviewModal,
+  isModalOpen: isImagePreviewModalOpen,
+  openModal: openImagePreviewModal,
   closeModal: closeImagePriviewModal,
 } = useModal()
 
