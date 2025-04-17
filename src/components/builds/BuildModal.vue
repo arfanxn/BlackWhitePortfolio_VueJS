@@ -8,9 +8,13 @@
         imgClass="max-w-full min-h-24 aspect-auto object-contain"
       />
       <div
-        class="absolute inset-x-0 bottom-0 bg-black/25 flex flex-row items-center justify-end p-1 border-t border-neutral-300/25"
+        class="absolute inset-x-0 bottom-0 bg-neutral-300/25 backdrop-blur flex flex-row items-center justify-end p-1 border-t border-neutral-300/25"
       >
-        <AButtonIcon @click="openImagePreviewModal" :icon="LuEye" iconClass="md:text-2xl! " />
+        <AButtonIcon
+          @click="openImagePreviewModal"
+          :icon="LuEye"
+          iconClass="text-white! md:text-2xl! "
+        />
       </div>
     </figure>
 
