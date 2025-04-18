@@ -10,7 +10,7 @@
         imgClass="max-w-full min-h-24 aspect-auto object-contain rounded-md! overflow-hidden!"
       />
       <div
-        class="absolute inset-x-0 bottom-0 bg-black/25 backdrop-blur flex flex-row items-center justify-end p-1 border-t border-neutral-300/25"
+        class="absolute inset-x-0 bottom-0 bg-black/25 backdrop-blur flex flex-row items-center justify-end p-0.5 md:p-1 border-t border-neutral-300/25"
       >
         <AButtonIcon
           @click="openImagePreviewModal"
