@@ -161,7 +161,7 @@ export const builds: readonly Build[] = Object.freeze([
     completedAt: new Date('2022-01-08'),
   },
   {
-    title: 'E - Library',
+    title: 'E-Library',
     description: description,
     stacks: [stacksMap.html, stacksMap.css, stacksMap.bootstrap, stacksMap.php],
     imageUrls: [
