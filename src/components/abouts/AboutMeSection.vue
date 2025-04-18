@@ -39,7 +39,7 @@
 
     <!-- Resume download -->
     <!-- TODO: implement download -->
-    <div class="mt-4">
+    <div>
       <a
         v-motion-slide-visible-once-left
         :duration="500"
