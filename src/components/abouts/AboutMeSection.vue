@@ -40,14 +40,11 @@
     <!-- Resume download -->
     <!-- TODO: implement download -->
     <div>
-      <a
-        v-motion-slide-visible-once-left
-        :duration="500"
-        :delay="300"
-        href="/path-to-resume.pdf"
-        download="YourName_Resume.pdf"
-      >
+      <a href="/path-to-resume.pdf" download="YourName_Resume.pdf">
         <AButtonIconed
+          v-motion-slide-visible-once-left
+          :duration="500"
+          :delay="300"
           class="font-semibold bg-white text-black hover:bg-neutral-300 transition-colors"
           label="Resume.pdf"
           :icon="LuDownload"
