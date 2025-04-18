@@ -7,7 +7,7 @@
         :delay="300"
         figureClass="max-w-3/4 md:max-w-1/2 overflow-hidden rounded-md"
         imgClass="aspect-square object-cover"
-        src="/profile.jpg"
+        src="/profile.webp"
         alt="Portrait of Arfan"
       />
     </div>
