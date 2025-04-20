@@ -34,7 +34,7 @@ const urlConfigs: UrlConfig[] = [
     getLabel: async (url: string) => (await fetchUrlTitle(url)) ?? 'Google Docs',
   },
   {
-    pattern: /^(https?:\/\/)?(drive\.google\.com\/file\/d\/.+)/,
+    pattern: /^(https?:\/\/)?(drive\.google\.com\/(?:file\/d\/|drive\/folders\/).+)/,
     icon: SiGoogledrive,
     getLabel: async (url: string) => (await fetchUrlTitle(url)) ?? 'Google Drive',
   },
