@@ -25,7 +25,11 @@
             <p class="font-firacode text-neutral-300 text-sm md:text-base max-w-1/2 md:max-w-3/4">
               {{ experience.role }}
             </p>
-            <ADateRange :start="experience.startedAt" :end="experience.finishedAt ?? 'Present'" />
+            <ADateRange
+              :start="experience.startedAt"
+              :end="experience.finishedAt ?? 'Present'"
+              class="text-sm md:text-base"
+            />
           </div>
         </article>
       </li>

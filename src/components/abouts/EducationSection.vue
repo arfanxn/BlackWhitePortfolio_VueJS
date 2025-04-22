@@ -26,7 +26,11 @@
               {{ education.field }}
             </p>
 
-            <ADateRange :start="education.startedAt" :end="education.finishedAt ?? 'Present'" />
+            <ADateRange
+              :start="education.startedAt"
+              :end="education.finishedAt ?? 'Present'"
+              class="text-sm md:text-base"
+            />
           </div>
         </article>
       </li>
