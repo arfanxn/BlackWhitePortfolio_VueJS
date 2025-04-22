@@ -14,10 +14,15 @@
       :duration="500"
       :delay="300"
     >
-      <span class="text-white">Backend Developer and Web 3 enthusiast from Jakarta.</span>
-      <span class="text-neutral-300" v-motion-fade :duration="500" :delay="600">
-        Interested in Golang, Rust, and Solidity.</span
+      <span v-html="shortBiography.first" class="text-white"></span>
+      <span
+        v-html="shortBiography.last"
+        class="text-neutral-300"
+        v-motion-fade
+        :duration="500"
+        :delay="600"
       >
+      </span>
     </p>
     <ul class="flex gap-x-4">
       <li
@@ -40,6 +45,7 @@ import { socials } from '@/constants/socialConstants'
 import { useTimeout } from '@vueuse/core'
 import { onBeforeUnmount, onMounted } from 'vue'
 import { useBodyScrollLock } from '@/composables/useBodyScrollLock'
+import { shortBiography } from '@/constants/aboutConstants'
 
 const { lockBodyScroll, unlockBodyScroll } = useBodyScrollLock()
 
