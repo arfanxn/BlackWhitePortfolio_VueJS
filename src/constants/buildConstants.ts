@@ -12,12 +12,10 @@ export type Build = {
 
 const imageUrlPrefix = '/images/builds'
 
-const description = `Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas.`
-
 export const builds: readonly Build[] = Object.freeze([
   {
-    title: 'Black White Portfolio',
-    description: description,
+    title: `Arfanxn's Portfolio`,
+    description: `<p>Arfanxn's Portfolio is a sleek, minimalistic website built with HTML, CSS, Tailwind, and Vue. It includes an About section, showcasing Arfan's short and full bio, profile image, education, experience, and skills (represented by icons like Golang, Solidity, and more). The Builds section displays projects like "Cashierfan" with its tech stack(s) represented by icon(s) as shown in the image. Certs highlights Arfan's certifications. The site features a clean, monochrome design and a functional 404 page. It’s responsive and highlights Arfan's skills.</p>`,
     stacks: [
       stacksMap.html,
       stacksMap.css,
@@ -39,7 +37,13 @@ export const builds: readonly Build[] = Object.freeze([
   },
   {
     title: 'Fortified Wallet',
-    description: description,
+    description: `<p>Fortified Wallet is a secure Ethereum wallet that uses multi-signature authentication for transactions. Signers are set during wallet creation and cannot be changed. For example, if 7 signers are provided with 5 approvals required, these settings are fixed and cannot be altered unless a new wallet is created. Users can lock funds in a specified USD amount, which applies to all Ethereum-based tokens.</p>
+
+    <p>To unlock the locked funds, users must provide the password and salt set during wallet creation. These details cannot be changed after setup, and if they are exposed, it is recommended to create a new wallet for security. While users can lock funds without providing a password or salt, both are required to unlock them.</p>
+
+    <p>The wallet also allows users to deposit ETH or tokens, transfer funds, approve, revoke, or cancel transactions, and view transaction history. Users can add tokens not automatically detected by the wallet, and it will show their balance or zero if no assets are present.</p>
+
+    <p>With its intuitive interface and robust security features, Fortified Wallet provides a reliable solution for managing and securing digital assets.</p>`,
     stacks: [
       stacksMap.html,
       stacksMap.css,
@@ -74,7 +78,7 @@ export const builds: readonly Build[] = Object.freeze([
   },
   {
     title: 'Spotifan',
-    description: description,
+    description: `<p>Spotifan is a non-functional Spotify clone created solely to enhance my UI slicing skills using Swift and SwiftUI. The app replicates Spotify's design with dummy data, focusing on the user interface without any actual backend functionality like music playback or search. The name, Spotifan, is a combination of Spotify and my name, which is Arfan, similar to "PayFan." It includes elements such as the Home, Search, and Your Library sections, all designed with a dark theme for a modern, immersive experience.</p>`,
     stacks: [stacksMap.swift],
     imageUrls: [
       `${imageUrlPrefix}/spotifan/spotifan.jpg`,
@@ -95,7 +99,7 @@ export const builds: readonly Build[] = Object.freeze([
   },
   {
     title: 'Arfinance',
-    description: description,
+    description: `<p>Arfinance is a cryptocurrency portfolio tracker built with Swift and SwiftUI, featuring a sleek dark theme for an enhanced user experience. It allows users to monitor live prices of various cryptocurrencies, manage their portfolio by adding or removing coins from a watchlist, and view detailed market information for each asset. The app focuses on tracking holdings, offering real-time updates on price fluctuations, market cap, and more, making it a valuable tool for crypto enthusiasts managing their investments.</p>`,
     stacks: [stacksMap.swift],
     imageUrls: [
       `${imageUrlPrefix}/arfinance/arfinance.jpg`,
@@ -119,7 +123,7 @@ export const builds: readonly Build[] = Object.freeze([
   },
   {
     title: 'Cashierfan',
-    description: `Cashierfan is a point-of-sale web app built with Laravel, Vue, Inertia.js, and Tailwind CSS. It features product and customer management, barcode-based sales input, stock tracking, role-based access, and auto-generated invoices. The dashboard gives an overview of daily activity and reports. Designed for small retail use, it focuses on speed and clarity. The name combines “cashier” and my name, Arfan, reflecting both function and personal touch.`,
+    description: `<p>Cashierfan is a POS (Point of Sale) application designed to streamline sales transactions, inventory management, and customer interactions. Developed using HTML, CSS, Tailwind, JavaScript, Vue, Inertia, and Laravel, this application allows cashiers to efficiently process sales, apply discounts, manage stock levels, and generate invoices. With real-time stock updates and detailed transaction records, Cashierfan offers a seamless, user-friendly experience for businesses looking to optimize their point of sale operations.</p>`,
     stacks: [
       stacksMap.html,
       stacksMap.css,
@@ -143,7 +147,7 @@ export const builds: readonly Build[] = Object.freeze([
   },
   {
     title: 'PayFan',
-    description: `PayFan is a PayPal clone I developed using Laravel, Vue.js, Bootstrap, and other web technologies. It replicates core features like sending and requesting money, tracking transactions, and managing user account settings including profile, password, privacy, and notifications. This project challenged me to understand how real-world financial platforms are structured, and it strengthened my full-stack development and user experience skills.`,
+    description: `<p>PayFan is a PayPal clone built to provide users with a seamless online payment experience. Designed using HTML, CSS, Bootstrap, JavaScript, Vue, and Laravel, PayFan allows users to send and request payments, manage their accounts, and track activities. The name "PayFan" combines "Pay" (from PayPal) and "Fan" (from my name, Arfan). This project showcases my skills in web development and the creation of financial service applications.</p>`,
     stacks: [
       stacksMap.html,
       stacksMap.css,
@@ -170,7 +174,7 @@ export const builds: readonly Build[] = Object.freeze([
   },
   {
     title: 'Fund Manager',
-    description: `Fund Manager is a simple fund management app I built using HTML, CSS, Bootstrap, JavaScript, and Vue.js. It lets users track their income and expenses with editable notes, dates, and auto-updated balances. I learned about CRUD operations, Vue’s reactivity, form handling, and using Bootstrap for a clean layout. The app includes pagination and in-line editing. Although it’s not fully responsive yet, this project helped me understand real-time updates, basic state management, and building interactive user experiences.`,
+    description: `<p>A simple yet powerful web application built to manage personal finances. The Fund Manager allows users to track income and expenses, add notes for each transaction, and maintain an organized record. Designed using HTML, CSS, Bootstrap, JavaScript, and Vue, this app provides a clean interface and real-time balance updates. It’s a practical solution for anyone looking to keep track of their finances with ease.</p>`,
     stacks: [
       stacksMap.html,
       stacksMap.css,
@@ -194,7 +198,7 @@ export const builds: readonly Build[] = Object.freeze([
   },
   {
     title: 'E-Library',
-    description: `E-Library is a web-based digital library platform I built using HTML, CSS, Bootstrap, and native PHP. It connects to the Google Books API to fetch book data and allows users to search, view, and bookmark their favorite titles. I created this project as a volunteer for my former high school, SMK Harapan Bersama, where I studied Computer Engineering. While the site isn't fully responsive yet, it served as a great learning experience in working with APIs, building dynamic features, and giving back to my school community through code.`,
+    description: `<p>A volunteer project where I developed an e-library website for my high school, SMK Harapan Bersama, leveraging the Google Books API to provide a vast collection of e-books. Built with HTML, CSS, Bootstrap, and PHP, the site enables students to easily browse, search, and bookmark their favorite books. As a Computer Engineering student, this project allowed me to contribute to my school's educational resources while enhancing my web development skills.</p>`,
     stacks: [stacksMap.html, stacksMap.css, stacksMap.bootstrap, stacksMap.php],
     imageUrls: [
       `${imageUrlPrefix}/e-library/e-library.jpg`,
@@ -211,7 +215,7 @@ export const builds: readonly Build[] = Object.freeze([
   },
   {
     title: 'Tealy Portfolio',
-    description: `Tealy Portfolio is the very first personal portfolio website I ever created—built completely from scratch. I was inspired by another developer's design and recreated it with my own touch. Just like my Tealy Calculator, this project uses a teal color scheme because teal used to be my favorite color (now I'm more into monochrome!). This project helped me learn how to structure a full website, organize personal branding, and build contact and project showcase sections. It marked the beginning of my journey into web development and design.`,
+    description: `<p>My first portfolio website, designed and built entirely from scratch to showcase my web development skills. Inspired by another designer's portfolio, this project allowed me to apply my knowledge in frontend development. The website includes a clean, modern design, highlighting my skills and it reflects my growth in coding and creative problem-solving. The Tealy theme represents my favorite color during that time.</p>`,
     stacks: [stacksMap.html, stacksMap.css, stacksMap.bootstrap, stacksMap.javascript],
     imageUrls: [
       `${imageUrlPrefix}/tealy-portfolio/tealy-portfolio.jpg`,
@@ -229,7 +233,7 @@ export const builds: readonly Build[] = Object.freeze([
   },
   {
     title: 'Tealy Calculator',
-    description: `Tealy Calculator represents my first programming project, designed during a time when teal was my favorite color (now replaced by monochrome black, white, and gray). This project was specifically created to enhance my logical thinking in programming by implementing mathematical operations in JavaScript. The calculator handles user interactions through HTML buttons, processing numeric inputs and arithmetic operations while maintaining a clean, teal-themed interface. The experience taught me fundamental programming concepts through practical application, challenging me to translate button clicks into mathematical functions and deliver accurate calculations while managing the logic flow behind each operation.`,
+    description: `<p>A simple yet effective project created in my early days of programming, designed to enhance logical thinking by implementing basic mathematical operations. Built using HTML, CSS, and JavaScript, this calculator features a clean teal theme—a nod to my favorite color at the time. As one of my first projects, it was a key step in developing my problem-solving skills with interactive UI components like number and operation buttons.</p>`,
     stacks: [stacksMap.html, stacksMap.css, stacksMap.bootstrap, stacksMap.javascript],
     imageUrls: [`${imageUrlPrefix}/tealy-calculator/calculator.jpg`],
     urls: ['https://github.com/arfanxn/TealyCalculator_HCJ'],
