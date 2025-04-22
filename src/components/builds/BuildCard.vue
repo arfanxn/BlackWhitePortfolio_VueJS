@@ -15,11 +15,10 @@
     </header>
 
     <section>
-      <p
-        class="mt-0.5 font-firacode break-words text-neutral-300 text-sm md:text-base text-ellipsis"
-      >
-        {{ truncatedDescription }}
-      </p>
+      <div
+        v-html="truncatedDescription"
+        class="mt-0.5 font-firacode break-words text-neutral-300 text-sm md:text-base text-ellipsis space-y-1 md:space-y-2"
+      ></div>
     </section>
 
     <ADateRange
@@ -64,9 +63,12 @@ const {
   closeModal: closeBuildModal,
 } = useModal()
 
-const truncatedDescription = computed(() =>
-  props.build.description.length > 100
-    ? `${props.build.description.substring(0, 100)}...`
-    : props.build.description,
-)
+const truncatedDescription = computed(() => {
+  // Strip HTML tags and truncate
+  const plainText = props.build.description.replace(/<[^>]*>/g, '')
+  const truncated = plainText.slice(0, 100)
+
+  // Add ellipsis only if text was truncated
+  return truncated + (plainText.length > 100 ? '...' : '')
+})
 </script>

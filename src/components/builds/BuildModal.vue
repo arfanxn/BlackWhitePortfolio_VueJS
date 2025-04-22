@@ -27,9 +27,10 @@
         {{ build.title }}
       </h2>
 
-      <p class="font-firacode text-base text-neutral-300 leading-relaxed">
-        {{ build.description }}
-      </p>
+      <div
+        v-html="build.description"
+        class="font-firacode text-base text-neutral-300 leading-relaxed space-y-1 md:space-y-2"
+      ></div>
     </header>
 
     <!-- Tech Stacks -->
