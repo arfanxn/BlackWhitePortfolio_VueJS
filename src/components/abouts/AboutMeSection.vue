@@ -20,22 +20,10 @@
     </header>
 
     <!-- Biography content -->
-    <!-- TODO: update biography -->
-    <article class="font-firacode break-words font-light flex flex-col gap-y-4 text-neutral-300">
-      <p v-motion-fade-visible-once :duration="300" :delay="300">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id omnis necessitatibus, quos
-        veritatis error aspernatur.
-      </p>
-      <p v-motion-fade-visible-once :duration="300" :delay="300">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia inventore impedit vel
-        nulla tempore eveniet doloremque, ipsum aspernatur cupiditate culpa.
-      </p>
-      <p v-motion-fade-visible-once :duration="300" :delay="300">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci aspernatur, quia
-        provident dolor eaque exercitationem minus laboriosam error? Hic amet sequi qui obcaecati
-        repudiandae soluta dolor pariatur corporis rerum alias?
-      </p>
-    </article>
+    <article
+      v-html="fullBiography"
+      class="font-firacode break-words font-light text-neutral-300 space-y-2 md:space-y-4 leading-relaxed"
+    ></article>
 
     <!-- Resume download -->
     <!-- TODO: implement download -->
@@ -59,4 +47,6 @@
 import { LuDownload } from '@kalimahapps/vue-icons'
 import AButtonIconed from '@/components/AButtonIconed.vue'
 import AImage from '@/components/AImage.vue'
+
+import { fullBiography } from '@/constants/aboutConstants'
 </script>
