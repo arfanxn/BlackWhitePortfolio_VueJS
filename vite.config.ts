@@ -16,4 +16,8 @@ export default defineConfig({
   server: {
     allowedHosts: true,
   },
+  define: {
+    __APP_NAME__: JSON.stringify(process.env.VITE__APP_NAME),
+    __APP_DESCRIPTION__: JSON.stringify(process.env.VITE__APP_DESCRIPTION),
+  },
 })
