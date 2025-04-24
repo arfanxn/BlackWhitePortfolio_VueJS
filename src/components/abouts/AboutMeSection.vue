@@ -22,6 +22,9 @@
     <!-- Biography content -->
     <article
       v-html="fullBiography"
+      v-motion-slide-visible-once-left
+      :duration="500"
+      :delay="300"
       class="font-firacode break-words font-light text-neutral-300 space-y-2 md:space-y-4 leading-relaxed"
     ></article>
 
