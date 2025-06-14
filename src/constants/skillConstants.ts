@@ -26,8 +26,10 @@ import {
   SiTailwindcss,
   SiTypescript,
   SiVuedotjs,
+  SiReact,
   SiLumen,
   SiInertia,
+  SiFlask,
 } from '@kalimahapps/vue-icons'
 
 export type Skill = {
@@ -55,11 +57,13 @@ export const solidity = { name: 'Solidity', icon: SiSolidity }
 export const bootstrap = { name: 'Bootstrap', icon: SiBootstrap }
 export const tailwind = { name: 'Tailwind', icon: SiTailwindcss }
 export const vue = { name: 'Vue', icon: SiVuedotjs }
+export const react = { name: 'React', icon: SiReact }
 export const ethers = { name: 'Ethers', icon: SiEthers }
 export const gofiber = { name: 'GoFiber', icon: LuBarChart2, iconClass: '-rotate-90' }
 export const laravel = { name: 'Laravel', icon: SiLaravel }
 export const lumen = { name: 'Lumen', icon: SiLumen }
 export const inertia = { name: 'Inertia', icon: SiInertia }
+export const flask = { name: 'Flask', icon: SiFlask }
 export const foundry = { name: 'Foundry', icon: SiCurseforge }
 export const notion = { name: 'Notion', icon: SiNotion }
 export const git = { name: 'Git', icon: SiGit }
@@ -85,11 +89,13 @@ export const skillsMap = Object.freeze({
   bootstrap,
   tailwind,
   vue,
+  react,
   ethers,
   gofiber,
   laravel,
   lumen,
   inertia,
+  flask,
   foundry,
   notion,
   git,
@@ -128,11 +134,13 @@ export const skillCategories: readonly SkillCategory[] = Object.freeze([
       skillsMap.bootstrap,
       skillsMap.tailwind,
       skillsMap.vue,
+      skillsMap.react,
       skillsMap.ethers,
       skillsMap.gofiber,
       skillsMap.laravel,
       skillsMap.lumen,
       skillsMap.inertia,
+      skillsMap.flask,
       skillsMap.foundry,
     ],
   },
