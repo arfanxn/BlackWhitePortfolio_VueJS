@@ -29,9 +29,8 @@
     ></article>
 
     <!-- Resume download -->
-    <!-- TODO: implement download -->
     <div>
-      <a href="/path-to-resume.pdf" download="YourName_Resume.pdf">
+      <a href="https://shorturl.at/FLKnx" download="Arfanxn's Resume.pdf" target="_blank">
         <AButtonIconed
           v-motion-slide-visible-once-left
           :duration="500"
