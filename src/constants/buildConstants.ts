@@ -77,6 +77,19 @@ export const builds: readonly Build[] = Object.freeze([
     completedAt: new Date('2025-04-05'),
   },
   {
+    title: 'Notefan',
+    description: `<p>Notefan is a Notion clone application with a backend developed in Golang and using MySQL as its database. The name, Notefan, is a portmanteau of Notion and the creator's name, Arfan, adding a personal signature to the project. It provides a RESTful API for features like user authentication, management of spaces and pages, and media handling. The backend is built with a layered architecture consisting of controllers, services, and repositories, and includes database migration files to assist with setup.</p>`,
+    stacks: [stacksMap.go, stacksMap.mysql],
+    imageUrls: [
+      `${imageUrlPrefix}/notefan/notefan.jpg`,
+      `${imageUrlPrefix}/notefan/code.png`,
+      `${imageUrlPrefix}/notefan/postman.png`,
+    ],
+    urls: ['https://github.com/arfanxn/Notefan_Golang'],
+    startedAt: new Date('2023-02-10'),
+    completedAt: new Date('2023-03-18'),
+  },
+  {
     title: 'Spotifan',
     description: `<p>Spotifan is a non-functional Spotify clone created solely to enhance my UI slicing skills using Swift and SwiftUI. The app replicates Spotify's design with dummy data, focusing on the user interface without any actual backend functionality like music playback or search. The name, Spotifan, is a combination of Spotify and my name, which is Arfan, similar to "PayFan." It includes elements such as the Home, Search, and Your Library sections, all designed with a dark theme for a modern, immersive experience.</p>`,
     stacks: [stacksMap.swift],
